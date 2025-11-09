@@ -1,15 +1,50 @@
 from django.urls import path, include
-from . import views
-from rest_framework import routers
+from rest_framework.routers import DefaultRouter
+from .views import (
+    get_csrf_token,
+    register_view,
+    login_view,
+    logout_view,
+    current_user_view,
+    update_user_view,
+    change_password_view,
+    UserManagementViewSet
+)
 
-router = routers.DefaultRouter()
-#router.register(r'core', views.BuildingsModelViewSet)
+# Router para el ViewSet de gestión de usuarios
+router = DefaultRouter()
+router.register(r'users', UserManagementViewSet, basename='user-management')
 
 urlpatterns = [
-    path("hello_world/", views.HelloWord.as_view(),name="hello_world"),
+    # CSRF Token
+    path('csrf/', get_csrf_token, name='csrf'),
+    
+    # Autenticación básica
+    path('register/', register_view, name='register'),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
+    
+    # Usuario actual
+    path('user/', current_user_view, name='current-user'),
+    path('user/update/', update_user_view, name='update-user'),
+    path('change-password/', change_password_view, name='change-password'),
+    
+    # Gestión de usuarios (solo admin)
     path('', include(router.urls)),
-    path('not_loggedin/', views.notLoggedIn, name="not_loggedin"),
-    path('login/', views.LoginView.as_view(),name="login"),
-    path('logout/', views.LogoutView.as_view(),name="login"),
-    path('isloggedin/', views.IsLoggedIn.as_view(),name="isloggedin"),
 ]
+
+#from django.urls import path, include
+#from . import views
+#from rest_framework import routers
+#
+#router = routers.DefaultRouter()
+##router.register(r'core', views.BuildingsModelViewSet)
+#
+#urlpatterns = [
+#    path("hello_world/", views.HelloWord.as_view(),name="hello_world"),
+#    path('', include(router.urls)),
+#    path('not_loggedin/', views.notLoggedIn, name="not_loggedin"),
+#    path('login/', views.LoginView.as_view(),name="login"),
+#    path('logout/', views.LogoutView.as_view(),name="login"),
+#    path('isloggedin/', views.IsLoggedIn.as_view(),name="isloggedin"),
+#]

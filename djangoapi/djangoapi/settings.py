@@ -49,12 +49,14 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg',
     #add all your django apps here
-    'core',
-    'codelist',
-    'buildings',
-    'flowers',
-    'smartcities'
+    #'core',
+    #'codelist',
+    #'buildings',
+    #'flowers',
+    #'smartcities'
+    'FELA'
 ]
+#AUTH_USER_MODEL = 'core.CustomUser'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -110,7 +112,7 @@ DATABASES = {
         'HOST': os.getenv('POSTGRES_HOST'),
         'PORT': os.getenv('POSTGRES_PORT'),
         'OPTIONS': {
-            'options': '-c search_path=public',
+            'options': '-c search_path=eventos,public',
         }
     }
 }
