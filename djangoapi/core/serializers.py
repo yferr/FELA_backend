@@ -1,8 +1,4 @@
-
-from django.db import connection
-
 from rest_framework import serializers
-
 from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
 from .models import CustomUser
@@ -25,12 +21,14 @@ class UserSerializer(serializers.ModelSerializer):
 class RegisterSerializer(serializers.ModelSerializer):
     """
     Serializer para registro de nuevos usuarios.
+    El usuario queda pendiente de aprobación (is_approved=False).
     """
     password = serializers.CharField(
         write_only=True,
         required=True,
         validators=[validate_password],
-        style={'input_type': 'password'}
+        style={'input_type': 'password'},
+        help_text="Mínimo 8 caracteres"
     )
     password2 = serializers.CharField(
         write_only=True,
@@ -83,6 +81,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 class LoginSerializer(serializers.Serializer):
     """
     Serializer para login de usuarios.
+    Valida credenciales y estado de aprobación.
     """
     username = serializers.CharField(required=True)
     password = serializers.CharField(

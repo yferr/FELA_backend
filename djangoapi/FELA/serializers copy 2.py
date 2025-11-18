@@ -47,16 +47,6 @@ class CountrySerializer(serializers.ModelSerializer):
         
         # Si no existe, crear nuevo
         return Country.objects.create(**validated_data)
-    
-    def update(self, instance, validated_data):
-        """
-        Actualiza SOLO las coordenadas.
-        NO permite cambiar el nombre del país.
-        """
-        instance.lat = validated_data.get('lat', instance.lat)
-        instance.lon = validated_data.get('lon', instance.lon)
-        instance.save()
-        return instance
 
 
 class CitySerializer(serializers.ModelSerializer):
@@ -116,16 +106,6 @@ class CitySerializer(serializers.ModelSerializer):
             lon=validated_data.get('lon')
         )
         return city
-    
-    def update(self, instance, validated_data):
-        """
-        Actualiza SOLO las coordenadas.
-        NO permite cambiar el nombre de la ciudad ni el país.
-        """
-        instance.lat = validated_data.get('lat', instance.lat)
-        instance.lon = validated_data.get('lon', instance.lon)
-        instance.save()
-        return instance
 
 
 class AgencySerializer(serializers.ModelSerializer):
@@ -196,52 +176,10 @@ class SpeakerSerializer(serializers.ModelSerializer):
             agency_s=agency_s
         )
         return speaker
-    
-    def update(self, instance, validated_data):
-        """
-        Actualiza nombre, país y agencia del speaker.
-        Valida que no haya duplicado con la nueva combinación nombre+país.
-        """
-        new_name = validated_data.get('name', instance.name)
-        country_name = validated_data.get('country_s')
-        new_agency = validated_data.get('agency_s', instance.agency_s)
-        
-        # Si cambia el país, buscar el objeto Country
-        if country_name:
-            new_country = Country.objects.filter(country__iexact=country_name).first()
-            if not new_country:
-                raise serializers.ValidationError({
-                    'country_s': f"El país '{country_name}' no existe."
-                })
-        else:
-            new_country = instance.country_s
-        
-        # Validar que no haya duplicado (nombre + país)
-        # Excluir el speaker actual de la búsqueda
-        duplicate = Speaker.objects.filter(
-            name__iexact=new_name,
-            country_s=new_country
-        ).exclude(pk=instance.pk).first()
-        
-        if duplicate:
-            raise serializers.ValidationError({
-                'name': f"Ya existe un speaker '{new_name}' en {new_country.country}."
-            })
-        
-        # Actualizar campos
-        instance.name = new_name
-        instance.country_s = new_country
-        instance.agency_s = new_agency
-        instance.save()
-        
-        return instance
 
 
 class EventSerializer(serializers.ModelSerializer):
-    """
-    Serializer básico para eventos.
-    Soporta crear evento con agencias (por IDs).
-    """
+    """Serializer básico para eventos"""
     country_e = serializers.CharField()
     agencies = serializers.PrimaryKeyRelatedField(
         many=True, 
@@ -279,55 +217,6 @@ class EventSerializer(serializers.ModelSerializer):
             })
         
         return data
-    
-    @transaction.atomic
-    def create(self, validated_data):
-        """
-        Crea evento y asocia agencias si se proporcionan.
-        """
-        agencies_data = validated_data.pop('agencies', [])
-        country_name = validated_data.pop('country_e')
-        
-        # Obtener país (ya validado)
-        country = Country.objects.filter(country__iexact=country_name).first()
-        
-        # Crear evento
-        event = Event.objects.create(
-            country_e=country,
-            **validated_data
-        )
-        
-        # Asociar agencias
-        for agency in agencies_data:
-            EventAgency.objects.create(id_event=event, id_agencia=agency)
-        
-        return event
-    
-    @transaction.atomic
-    def update(self, instance, validated_data):
-        """
-        Actualiza evento y reemplaza agencias si se proporcionan.
-        """
-        agencies_data = validated_data.pop('agencies', None)
-        country_name = validated_data.pop('country_e', None)
-        
-        # Actualizar país si viene
-        if country_name:
-            country = Country.objects.filter(country__iexact=country_name).first()
-            instance.country_e = country
-        
-        # Actualizar otros campos
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        
-        # Reemplazar agencias si vienen (elimina todas y crea nuevas)
-        if agencies_data is not None:
-            EventAgency.objects.filter(id_event=instance).delete()
-            for agency in agencies_data:
-                EventAgency.objects.create(id_event=instance, id_agencia=agency)
-        
-        return instance
 
 
 class PresentationSerializer(serializers.ModelSerializer):
@@ -598,47 +487,3 @@ class EventCompleteCreateSerializer(serializers.Serializer):
                 )
         
         return event
-
-
-# ============== SERIALIZERS PARA AGENCIAS DE EVENTO ==============
-
-class EventAgencySerializer(serializers.Serializer):
-    """
-    Serializer para agregar agencia a evento.
-    Acepta nombre o ID de agencia.
-    """
-    agency_id = serializers.IntegerField(required=False, allow_null=True)
-    agency_name = serializers.CharField(max_length=150, required=False, allow_blank=True)
-    
-    def validate(self, data):
-        """Validar que se proporcione agency_id O agency_name"""
-        if not data.get('agency_id') and not data.get('agency_name'):
-            raise serializers.ValidationError(
-                "Debes proporcionar 'agency_id' o 'agency_name'."
-            )
-        return data
-
-
-class EventAgenciesUpdateSerializer(serializers.Serializer):
-    """
-    Serializer para actualizar todas las agencias de un evento.
-    Acepta lista de IDs o nombres.
-    """
-    agencies = serializers.ListField(
-        child=serializers.IntegerField(),
-        required=False,
-        help_text="Lista de IDs de agencias"
-    )
-    agency_names = serializers.ListField(
-        child=serializers.CharField(max_length=150),
-        required=False,
-        help_text="Lista de nombres de agencias"
-    )
-    
-    def validate(self, data):
-        """Validar que se proporcione agencies O agency_names"""
-        if not data.get('agencies') and not data.get('agency_names'):
-            raise serializers.ValidationError(
-                "Debes proporcionar 'agencies' (IDs) o 'agency_names' (nombres)."
-            )
-        return data

@@ -29,7 +29,7 @@ schema_view = get_schema_view(
    openapi.Info(
       title="Universitat Politècnica de València",
       default_version='v1',
-      description="Django API template",
+      description="Django API FELA",
       terms_of_service="https://www.google.com/policies/terms/",
       contact=openapi.Contact(email="joamona@cgf.upv.es"),
       license=openapi.License(name="GPL License"),
@@ -44,12 +44,12 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
     path('admin/', admin.site.urls),
+    path('auth/', include('core.urls')),
+    path('FELA/', include('FELA.urls')),
 #    path("accounts/logout/", custom_logout_view, name="logout"),
     path("accounts/", include("django.contrib.auth.urls")),
 
     #path('codelist/', include('codelist.urls')),
-    #path('core/', include('core.urls')),
-    path('FELA/', include('FELA.urls')),
     #path('buildings/', include('buildings.urls')),
     #path('flowers/', include('flowers.urls')),
     #path('smartcities/', include('smartcities.urls')),

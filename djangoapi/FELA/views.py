@@ -1,10 +1,11 @@
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny
+from rest_framework.exceptions import ValidationError
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 from django.db.models import Q
+from django.db import transaction
 
 from .models import (
     Country, City, Agency, Event, Presentation, 
@@ -16,24 +17,28 @@ from .serializers import (
     AgencySerializer,
     EventSerializer, EventDetailSerializer, EventCompleteCreateSerializer,
     PresentationSerializer, PresentationDetailSerializer,
-    SpeakerSerializer, SpeakerDetailSerializer
+    SpeakerSerializer, SpeakerDetailSerializer,
+    EventAgencySerializer, EventAgenciesUpdateSerializer
 )
+from .permissions import DeleteOnlySuperuser
 
 
-# ============== VIEWSETS CON AUTOCOMPLETADO ==============
+# ============== VIEWSETS CON PERMISOS Y VALIDACIÓN DELETE ==============
 
 class CountryViewSet(viewsets.ModelViewSet):
     """
     ViewSet para países con búsqueda (autocomplete).
     
-    GET /api/eventos/countries/?search=esp
-    → Retorna países que contienen "esp" (case-insensitive)
+    Permisos:
+    - GET: Público
+    - POST/PUT/PATCH: Usuario autenticado y aprobado
+    - DELETE: Solo superusuario
     """
     queryset = Country.objects.all()
-    permission_classes = [AllowAny]  # Cambiar a IsAuthenticated cuando configures usuarios
+    permission_classes = [DeleteOnlySuperuser]
     lookup_field = 'country'
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = ['country']  # Búsqueda case-insensitive por defecto
+    search_fields = ['country']
     ordering_fields = ['country']
     ordering = ['country']
     
@@ -43,35 +48,52 @@ class CountryViewSet(viewsets.ModelViewSet):
         return CountrySerializer
     
     def get_queryset(self):
-        """
-        Personalizar queryset para búsqueda más flexible.
-        """
         queryset = Country.objects.all()
-        
-        # Búsqueda manual adicional si es necesario
         search = self.request.query_params.get('search', None)
         if search:
             queryset = queryset.filter(country__icontains=search)
-        
         return queryset
+    
+    def perform_destroy(self, instance):
+        """
+        Validar antes de eliminar.
+        No permitir si tiene ciudades o eventos relacionados.
+        """
+        # Verificar ciudades
+        cities_count = instance.cities.count()
+        if cities_count > 0:
+            raise ValidationError({
+                'detail': f"No se puede eliminar el país '{instance.country}'. Tiene {cities_count} ciudad(es) relacionada(s).",
+                'cities_count': cities_count
+            })
+        
+        # Verificar eventos
+        events_count = instance.events.count()
+        if events_count > 0:
+            raise ValidationError({
+                'detail': f"No se puede eliminar el país '{instance.country}'. Tiene {events_count} evento(s) relacionado(s).",
+                'events_count': events_count
+            })
+        
+        # Verificar speakers
+        speakers_count = instance.speakers.count()
+        if speakers_count > 0:
+            raise ValidationError({
+                'detail': f"No se puede eliminar el país '{instance.country}'. Tiene {speakers_count} speaker(s) relacionado(s).",
+                'speakers_count': speakers_count
+            })
+        
+        # Si no hay dependencias, eliminar
+        instance.delete()
 
 
 class CityViewSet(viewsets.ModelViewSet):
     """
     ViewSet para ciudades con búsqueda y filtro por país.
-    
-    GET /api/eventos/cities/?search=val
-    → Retorna ciudades que contienen "val"
-    
-    GET /api/eventos/cities/?country=España
-    → Retorna ciudades de España
-    
-    GET /api/eventos/cities/?search=bar&country=España
-    → Retorna ciudades de España que contienen "bar"
     """
     queryset = City.objects.all()
     serializer_class = CitySerializer
-    permission_classes = [AllowAny]
+    permission_classes = [DeleteOnlySuperuser]
     filter_backends = [filters.SearchFilter, DjangoFilterBackend, filters.OrderingFilter]
     search_fields = ['city']
     filterset_fields = ['country__country']
@@ -79,34 +101,45 @@ class CityViewSet(viewsets.ModelViewSet):
     ordering = ['country__country', 'city']
     
     def get_queryset(self):
-        """
-        Filtrado personalizado por país (case-insensitive).
-        """
         queryset = City.objects.select_related('country').all()
         
-        # Filtro por país (case-insensitive)
         country_param = self.request.query_params.get('country')
         if country_param:
             queryset = queryset.filter(country__country__iexact=country_param)
         
-        # Búsqueda por ciudad (case-insensitive)
         search = self.request.query_params.get('search')
         if search:
             queryset = queryset.filter(city__icontains=search)
         
         return queryset
+    
+    def perform_destroy(self, instance):
+        """
+        Validar antes de eliminar.
+        No permitir si hay eventos en esta ciudad.
+        """
+        # Verificar si hay eventos en esta ciudad
+        events_count = Event.objects.filter(
+            country_e=instance.country,
+            city_e=instance.city
+        ).count()
+        
+        if events_count > 0:
+            raise ValidationError({
+                'detail': f"No se puede eliminar la ciudad '{instance.city}'. Tiene {events_count} evento(s) relacionado(s).",
+                'events_count': events_count
+            })
+        
+        instance.delete()
 
 
 class AgencyViewSet(viewsets.ModelViewSet):
     """
     ViewSet para agencias con búsqueda (autocomplete).
-    
-    GET /api/eventos/agencies/?search=unesco
-    → Retorna agencias que contienen "unesco"
     """
     queryset = Agency.objects.all()
     serializer_class = AgencySerializer
-    permission_classes = [AllowAny]
+    permission_classes = [DeleteOnlySuperuser]
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
     search_fields = ['nombre']
     ordering_fields = ['nombre']
@@ -114,25 +147,32 @@ class AgencyViewSet(viewsets.ModelViewSet):
     
     def get_queryset(self):
         queryset = Agency.objects.all()
-        
-        # Búsqueda manual adicional
         search = self.request.query_params.get('search')
         if search:
             queryset = queryset.filter(nombre__icontains=search)
-        
         return queryset
+    
+    def perform_destroy(self, instance):
+        """
+        Validar antes de eliminar.
+        No permitir si hay eventos relacionados.
+        """
+        events_count = instance.events.count()
+        if events_count > 0:
+            raise ValidationError({
+                'detail': f"No se puede eliminar la agencia '{instance.nombre}'. Tiene {events_count} evento(s) relacionado(s).",
+                'events_count': events_count
+            })
+        
+        instance.delete()
 
 
 class EventViewSet(viewsets.ModelViewSet):
     """
     ViewSet para eventos con búsqueda por título.
-    Incluye acción custom para crear evento completo.
-    
-    GET /api/eventos/events/?search=gis
-    → Retorna eventos que contienen "gis" en el título
     """
     queryset = Event.objects.all()
-    permission_classes = [AllowAny]
+    permission_classes = [DeleteOnlySuperuser]
     filter_backends = [filters.SearchFilter, DjangoFilterBackend, filters.OrderingFilter]
     search_fields = ['event_title']
     filterset_fields = ['year', 'type', 'country_e__country']
@@ -144,6 +184,10 @@ class EventViewSet(viewsets.ModelViewSet):
             return EventCompleteCreateSerializer
         elif self.action == 'retrieve':
             return EventDetailSerializer
+        elif self.action in ['add_agency', 'remove_agency']:
+            return EventAgencySerializer
+        elif self.action == 'update_agencies':
+            return EventAgenciesUpdateSerializer
         return EventSerializer
     
     def get_queryset(self):
@@ -151,7 +195,6 @@ class EventViewSet(viewsets.ModelViewSet):
             'presentations', 'agencies'
         ).all()
         
-        # Filtros adicionales
         year = self.request.query_params.get('year')
         country = self.request.query_params.get('country')
         event_type = self.request.query_params.get('type')
@@ -168,44 +211,24 @@ class EventViewSet(viewsets.ModelViewSet):
         
         return queryset
     
+    def perform_destroy(self, instance):
+        """
+        Validar antes de eliminar.
+        Advertir sobre cascada de presentaciones.
+        """
+        presentations_count = instance.presentations.count()
+        
+        if presentations_count > 0:
+            # Informar pero permitir (CASCADE configurado en BD)
+            # El usuario superusuario es consciente de esto
+            pass
+        
+        # Eliminar (CASCADE se encarga de presentations y relaciones)
+        instance.delete()
+    
     @action(detail=False, methods=['post'], url_path='create-complete')
     def create_complete(self, request):
-        """
-        Crea un evento completo con presentaciones y speakers en una sola operación.
-        Normaliza automáticamente (case-insensitive get-or-create).
-        
-        POST /api/eventos/events/create-complete/
-        
-        Body ejemplo:
-        {
-            "date": "2025-01-15",
-            "year": 2025,
-            "type": "Conference",
-            "country": "España",
-            "city": "Valencia",
-            "event_title": "GIS Summit 2025",
-            "country_lat": 40.4168,
-            "country_lon": -3.7038,
-            "city_lat": 39.4699,
-            "city_lon": -0.3763,
-            "agencies": ["UNESCO", "FAO"],
-            "presentations": [
-                {
-                    "title": "ML in GIS",
-                    "language": ["en", "es"],
-                    "url": "http://...",
-                    "observations": "...",
-                    "speakers": [
-                        {
-                            "name": "Juan Pérez",
-                            "country": "España",
-                            "agency": "CSIC"
-                        }
-                    ]
-                }
-            ]
-        }
-        """
+        """Crea un evento completo con presentaciones y speakers."""
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             event = serializer.save()
@@ -214,17 +237,143 @@ class EventViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_201_CREATED
             )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    @action(detail=True, methods=['post'], url_path='add-agency')
+    def add_agency(self, request, pk=None):
+        """Agrega una agencia a un evento existente."""
+        event = self.get_object()
+        serializer = EventAgencySerializer(data=request.data)
+        
+        if serializer.is_valid():
+            agency_id = serializer.validated_data.get('agency_id')
+            agency_name = serializer.validated_data.get('agency_name')
+            
+            if agency_id:
+                try:
+                    agency = Agency.objects.get(id=agency_id)
+                except Agency.DoesNotExist:
+                    return Response(
+                        {"error": f"Agencia con ID {agency_id} no existe."},
+                        status=status.HTTP_404_NOT_FOUND
+                    )
+            else:
+                agency = Agency.objects.filter(nombre__iexact=agency_name).first()
+                if not agency:
+                    agency = Agency.objects.create(nombre=agency_name)
+            
+            relation, created = EventAgency.objects.get_or_create(
+                id_event=event,
+                id_agencia=agency
+            )
+            
+            if created:
+                return Response(
+                    {
+                        "message": f"Agencia '{agency.nombre}' agregada exitosamente al evento.",
+                        "agency": AgencySerializer(agency).data
+                    },
+                    status=status.HTTP_201_CREATED
+                )
+            else:
+                return Response(
+                    {
+                        "message": f"La agencia '{agency.nombre}' ya está asociada a este evento.",
+                        "agency": AgencySerializer(agency).data
+                    },
+                    status=status.HTTP_200_OK
+                )
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    @action(detail=True, methods=['post'], url_path='remove-agency')
+    def remove_agency(self, request, pk=None):
+        """Elimina una agencia de un evento."""
+        event = self.get_object()
+        serializer = EventAgencySerializer(data=request.data)
+        
+        if serializer.is_valid():
+            agency_id = serializer.validated_data.get('agency_id')
+            agency_name = serializer.validated_data.get('agency_name')
+            
+            if agency_id:
+                try:
+                    agency = Agency.objects.get(id=agency_id)
+                except Agency.DoesNotExist:
+                    return Response(
+                        {"error": f"Agencia con ID {agency_id} no existe."},
+                        status=status.HTTP_404_NOT_FOUND
+                    )
+            else:
+                agency = Agency.objects.filter(nombre__iexact=agency_name).first()
+                if not agency:
+                    return Response(
+                        {"error": f"Agencia '{agency_name}' no existe."},
+                        status=status.HTTP_404_NOT_FOUND
+                    )
+            
+            try:
+                relation = EventAgency.objects.get(id_event=event, id_agencia=agency)
+                relation.delete()
+                return Response(
+                    {"message": f"Agencia '{agency.nombre}' eliminada del evento."},
+                    status=status.HTTP_200_OK
+                )
+            except EventAgency.DoesNotExist:
+                return Response(
+                    {"error": f"La agencia '{agency.nombre}' no está asociada a este evento."},
+                    status=status.HTTP_404_NOT_FOUND
+                )
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    @action(detail=True, methods=['put', 'patch'], url_path='agencies')
+    @transaction.atomic
+    def update_agencies(self, request, pk=None):
+        """Reemplaza todas las agencias de un evento."""
+        event = self.get_object()
+        serializer = EventAgenciesUpdateSerializer(data=request.data)
+        
+        if serializer.is_valid():
+            agencies_ids = serializer.validated_data.get('agencies')
+            agency_names = serializer.validated_data.get('agency_names')
+            
+            EventAgency.objects.filter(id_event=event).delete()
+            
+            if agencies_ids:
+                for agency_id in agencies_ids:
+                    try:
+                        agency = Agency.objects.get(id=agency_id)
+                        EventAgency.objects.create(id_event=event, id_agencia=agency)
+                    except Agency.DoesNotExist:
+                        pass
+            
+            elif agency_names:
+                for agency_name in agency_names:
+                    agency = Agency.objects.filter(nombre__iexact=agency_name).first()
+                    if not agency:
+                        agency = Agency.objects.create(nombre=agency_name)
+                    EventAgency.objects.create(id_event=event, id_agencia=agency)
+            
+            return Response(
+                EventDetailSerializer(event).data,
+                status=status.HTTP_200_OK
+            )
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    @action(detail=True, methods=['get'], url_path='agencies')
+    def list_agencies(self, request, pk=None):
+        """Lista todas las agencias de un evento."""
+        event = self.get_object()
+        agencies = event.agencies.all()
+        serializer = AgencySerializer(agencies, many=True)
+        return Response(serializer.data)
 
 
 class PresentationViewSet(viewsets.ModelViewSet):
-    """
-    ViewSet para presentaciones con búsqueda compleja.
-    
-    GET /api/eventos/presentations/?search=machine
-    → Retorna presentaciones con "machine" en el título
-    """
+    """ViewSet para presentaciones con búsqueda compleja."""
     queryset = Presentation.objects.all()
-    permission_classes = [AllowAny]
+    permission_classes = [DeleteOnlySuperuser]
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
     search_fields = ['title']
     ordering_fields = ['title', 'event_title__year']
@@ -242,26 +391,20 @@ class PresentationViewSet(viewsets.ModelViewSet):
         ).prefetch_related('speakers').all()
         return queryset
     
+    def perform_destroy(self, instance):
+        """
+        Validar antes de eliminar.
+        Advertir sobre cascada de relaciones con speakers.
+        """
+        speakers_count = instance.speakers.count()
+        # Informar pero permitir (CASCADE configurado)
+        instance.delete()
+    
     @action(detail=False, methods=['get'], url_path='search')
     def search(self, request):
-        """
-        Búsqueda compleja de presentaciones con múltiples filtros.
-        
-        Query params:
-        - event_id: ID del evento
-        - event_title: Título del evento (búsqueda parcial)
-        - speaker_id: ID del speaker
-        - speaker_name: Nombre del speaker (búsqueda parcial)
-        - language: Idioma
-        - agency: Nombre de agencia (búsqueda en agencias del evento)
-        - country: País del evento
-        - year: Año del evento
-        
-        Ejemplo: /api/eventos/presentations/search/?language=es&country=España&year=2025
-        """
+        """Búsqueda compleja de presentaciones con múltiples filtros."""
         queryset = self.get_queryset()
         
-        # Filtro por evento
         event_id = request.query_params.get('event_id')
         event_title = request.query_params.get('event_title')
         if event_id:
@@ -269,7 +412,6 @@ class PresentationViewSet(viewsets.ModelViewSet):
         if event_title:
             queryset = queryset.filter(event_title__event_title__icontains=event_title)
         
-        # Filtro por speaker
         speaker_id = request.query_params.get('speaker_id')
         speaker_name = request.query_params.get('speaker_name')
         if speaker_id:
@@ -277,29 +419,24 @@ class PresentationViewSet(viewsets.ModelViewSet):
         if speaker_name:
             queryset = queryset.filter(speakers__name__icontains=speaker_name)
         
-        # Filtro por idioma
         language = request.query_params.get('language')
         if language:
             queryset = queryset.filter(language__contains=[language])
         
-        # Filtro por país del evento
         country = request.query_params.get('country')
         if country:
             queryset = queryset.filter(event_title__country_e__country__iexact=country)
         
-        # Filtro por año
         year = request.query_params.get('year')
         if year:
             queryset = queryset.filter(event_title__year=year)
         
-        # Filtro por agencia (del evento)
         agency = request.query_params.get('agency')
         if agency:
             queryset = queryset.filter(
                 event_title__agencies__nombre__icontains=agency
             )
         
-        # Eliminar duplicados
         queryset = queryset.distinct()
         
         serializer = PresentationDetailSerializer(queryset, many=True)
@@ -307,17 +444,9 @@ class PresentationViewSet(viewsets.ModelViewSet):
 
 
 class SpeakerViewSet(viewsets.ModelViewSet):
-    """
-    ViewSet para speakers con búsqueda.
-    
-    GET /api/eventos/speakers/?search=juan
-    → Retorna speakers con "juan" en el nombre
-    
-    GET /api/eventos/speakers/?country=España
-    → Retorna speakers de España
-    """
+    """ViewSet para speakers con búsqueda."""
     queryset = Speaker.objects.all()
-    permission_classes = [AllowAny]
+    permission_classes = [DeleteOnlySuperuser]
     filter_backends = [filters.SearchFilter, DjangoFilterBackend, filters.OrderingFilter]
     search_fields = ['name', 'agency_s']
     filterset_fields = ['country_s__country']
@@ -332,17 +461,14 @@ class SpeakerViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = Speaker.objects.select_related('country_s').all()
         
-        # Filtro por país (case-insensitive)
         country = self.request.query_params.get('country')
         if country:
             queryset = queryset.filter(country_s__country__iexact=country)
         
-        # Filtro por agencia
         agency = self.request.query_params.get('agency')
         if agency:
             queryset = queryset.filter(agency_s__icontains=agency)
         
-        # Búsqueda por nombre
         search = self.request.query_params.get('search')
         if search:
             queryset = queryset.filter(
@@ -351,13 +477,23 @@ class SpeakerViewSet(viewsets.ModelViewSet):
         
         return queryset
     
+    def perform_destroy(self, instance):
+        """
+        Validar antes de eliminar.
+        No permitir si tiene presentaciones relacionadas.
+        """
+        presentations_count = instance.presentations.count()
+        if presentations_count > 0:
+            raise ValidationError({
+                'detail': f"No se puede eliminar el speaker '{instance.name}'. Tiene {presentations_count} presentación(es) relacionada(s).",
+                'presentations_count': presentations_count
+            })
+        
+        instance.delete()
+    
     @action(detail=True, methods=['get'], url_path='presentations')
     def presentations(self, request, pk=None):
-        """
-        Retorna todas las presentaciones de un speaker específico.
-        
-        GET /api/eventos/speakers/5/presentations/
-        """
+        """Retorna todas las presentaciones de un speaker específico."""
         speaker = self.get_object()
         presentations = speaker.presentations.all()
         serializer = PresentationDetailSerializer(presentations, many=True)
@@ -367,18 +503,11 @@ class SpeakerViewSet(viewsets.ModelViewSet):
 # ============== VIEWSETS PARA RELACIONES ==============
 
 class PresentationSpeakerViewSet(viewsets.ViewSet):
-    """
-    ViewSet para gestionar la relación entre presentaciones y speakers.
-    """
-    permission_classes = [AllowAny]
+    """ViewSet para gestionar la relación entre presentaciones y speakers."""
+    permission_classes = [DeleteOnlySuperuser]
     
     def create(self, request):
-        """
-        Asocia un speaker a una presentación.
-        
-        POST /api/eventos/presentation-speakers/
-        Body: {"presentation_id": 1, "speaker_id": 2}
-        """
+        """Asocia un speaker a una presentación."""
         presentation_id = request.data.get('presentation_id')
         speaker_id = request.data.get('speaker_id')
         
@@ -419,12 +548,7 @@ class PresentationSpeakerViewSet(viewsets.ViewSet):
             )
     
     def destroy(self, request, pk=None):
-        """
-        Elimina la asociación entre presentación y speaker.
-        
-        DELETE /api/eventos/presentation-speakers/5-10/
-        pk debe ser en formato: presentation_id-speaker_id
-        """
+        """Elimina la asociación entre presentación y speaker."""
         try:
             presentation_id, speaker_id = pk.split('-')
             relation = PresentationSpeaker.objects.get(
@@ -442,6 +566,76 @@ class PresentationSpeakerViewSet(viewsets.ViewSet):
                 status=status.HTTP_400_BAD_REQUEST
             )
         except PresentationSpeaker.DoesNotExist:
+            return Response(
+                {"error": "Relación no encontrada"},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+
+class EventAgencyViewSet(viewsets.ViewSet):
+    """ViewSet genérico para gestionar relación events-agencies."""
+    permission_classes = [DeleteOnlySuperuser]
+    
+    def create(self, request):
+        """Asocia una agencia a un evento."""
+        event_id = request.data.get('event_id')
+        agency_id = request.data.get('agency_id')
+        
+        if not event_id or not agency_id:
+            return Response(
+                {"error": "Se requieren event_id y agency_id"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        try:
+            event = Event.objects.get(id=event_id)
+            agency = Agency.objects.get(id=agency_id)
+        except Event.DoesNotExist:
+            return Response(
+                {"error": f"Evento con id {event_id} no existe"},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        except Agency.DoesNotExist:
+            return Response(
+                {"error": f"Agencia con id {agency_id} no existe"},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        
+        relation, created = EventAgency.objects.get_or_create(
+            id_event=event,
+            id_agencia=agency
+        )
+        
+        if created:
+            return Response(
+                {"message": "Agencia asociada al evento exitosamente"},
+                status=status.HTTP_201_CREATED
+            )
+        else:
+            return Response(
+                {"message": "La relación ya existe"},
+                status=status.HTTP_200_OK
+            )
+    
+    def destroy(self, request, pk=None):
+        """Elimina la asociación entre evento y agencia."""
+        try:
+            event_id, agency_id = pk.split('-')
+            relation = EventAgency.objects.get(
+                id_event_id=event_id,
+                id_agencia_id=agency_id
+            )
+            relation.delete()
+            return Response(
+                {"message": "Relación eliminada exitosamente"},
+                status=status.HTTP_204_NO_CONTENT
+            )
+        except ValueError:
+            return Response(
+                {"error": "Formato incorrecto. Use: event_id-agency_id"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        except EventAgency.DoesNotExist:
             return Response(
                 {"error": "Relación no encontrada"},
                 status=status.HTTP_404_NOT_FOUND

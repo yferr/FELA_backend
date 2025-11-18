@@ -26,6 +26,7 @@ SECRET_KEY = os.getenv('SECRET_KEY','DKLSJGHFHF654165464kasdjhadkgf')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 REMOTE_DEBUG = False
+#DEBUG= False
 DEBUG = os.getenv("DEBUG", 'False').lower() in ('true', '1', 't')
 
 ALLOWED_HOSTS = [os.getenv('DJANGO_ALLOWED_HOSTS')]
@@ -49,14 +50,19 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg',
     #add all your django apps here
-    #'core',
+    'core',
     #'codelist',
     #'buildings',
     #'flowers',
     #'smartcities'
+    #'FELA.apps.FELAConfig'
     'FELA'
 ]
-#AUTH_USER_MODEL = 'core.CustomUser'
+
+# MODELO DE USUARIO CUSTOM
+AUTH_USER_MODEL = 'core.CustomUser'
+
+# MIDDLEWARE
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -72,10 +78,22 @@ MIDDLEWARE = [
 if DEBUG:
     #CORS_ALLOW_ALL_ORIGINS = True   <-- Not allowed any more for chrome
     #You need to specify the allowed origins
-    CORS_ALLOWED_ORIGINS=['http://localhost:4200']
+    CORS_ALLOWED_ORIGINS=['http://localhost:5173']
 
 #necressary to allow the cookies to be sent in the header of the request
 CORS_ALLOW_CREDENTIALS = True
+
+# CSRF
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:8080",
+    "http://localhost:4200",
+    "http://localhost:5173",
+]
+
+# Configuración para que JS pueda leer el token
+CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_SAMESITE = 'Lax'
 
 ROOT_URLCONF = 'djangoapi.urls'
 
@@ -136,6 +154,38 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# SESIONES
+# ============================================
+SESSION_COOKIE_AGE = 1209600  # 2 semanas
+SESSION_COOKIE_SAMESITE = 'Lax'
+SESSION_COOKIE_HTTPONLY = True
+
+# En producción activar:
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+
+# CACHÉ 
+# Redis 
+#CACHES = {
+#    'default': {
+#        'BACKEND': 'django_redis.cache.RedisCache',
+#        'LOCATION': 'redis://redis:6379/1',
+#        'OPTIONS': {
+#            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#        },
+#        'KEY_PREFIX': 'FELA',
+#        'TIMEOUT': 60 * 60 * 24 * 7,  # 7 días
+#    }
+#}
+
+# OPCIÓN B: Memoria (si no tienes Redis)
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'eventos-cache',
+        'TIMEOUT': 60 * 60 * 24 * 7,
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
@@ -163,13 +213,37 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #LOGOUT_REDIRECT_URL = "/accounts/login/"
 
 #if you try to use a view without being logged in, redirect to the following URL
-if DEBUG:
-    LOGIN_URL = "/core/not_loggedin/"
-else:
-    LOGIN_URL = "/desweb-api/core/not_loggedin/"
+#if DEBUG:
+#    LOGIN_URL = "/core/not_loggedin/"
+#else:
+#    LOGIN_URL = "/desweb-api/core/not_loggedin/"
 
+#REST_FRAMEWORK = {
+#    'DEFAULT_FILTER_BACKENDS': (
+#        'django_filters.rest_framework.DjangoFilterBackend',
+#    ),
+#}
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': (
+    # Autenticación por sesión
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    # Permisos por defecto (lectura pública)
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
+    # Paginación
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 50,
+    # Filtros
+    'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
-    ),
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
+    ],
+    # Formato de fecha
+    'DATETIME_FORMAT': '%Y-%m-%d %H:%M:%S',
+    # Manejo de excepciones
+    'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
 }
+

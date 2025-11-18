@@ -1,4 +1,4 @@
-#Django imports
+from django.shortcuts import render
 from rest_framework import status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
@@ -16,6 +16,7 @@ from .serializers import (
     UserUpdateSerializer,
     UserApprovalSerializer
 )
+from .permissions import IsSuperUser
 
 
 @api_view(['GET'])
@@ -25,6 +26,8 @@ def get_csrf_token(request):
     """
     Endpoint para obtener el CSRF token.
     Útil para aplicaciones frontend que usan autenticación por sesión.
+    
+    GET /api/auth/csrf/
     """
     return Response({'detail': 'CSRF cookie set'})
 
@@ -193,7 +196,7 @@ class UserManagementViewSet(viewsets.ModelViewSet):
     Permite listar, ver detalle, aprobar y desactivar usuarios.
     """
     queryset = CustomUser.objects.all()
-    permission_classes = [IsAdminUser]
+    permission_classes = [IsSuperUser]
     
     def get_serializer_class(self):
         if self.action in ['approve', 'toggle_active']:
@@ -302,63 +305,3 @@ class UserManagementViewSet(viewsets.ModelViewSet):
             "count": pending_users.count(),
             "users": serializer.data
         })
-
-
-
-#
-#from django.http import JsonResponse
-#from django.views import View
-#from django.contrib.auth import authenticate, login, logout
-#from django.contrib.auth.mixins import LoginRequiredMixin
-#from django.shortcuts import redirect
-#import random, time
-#def custom_logout_view(request):
-#    logout(request)
-#    return redirect("/accounts/login/")  # O a donde desees redirigir después del logout
-#
-#def notLoggedIn(request):
-#    return JsonResponse({"ok":False,"message": "You are not logged in", "data":[]})
-#
-#class HelloWord(View):
-#    def get(self, request):
-#        return JsonResponse({"ok":True,"message": "Core. Hello world", "data":[]})
-#
-#class LoginView(View):
-#    def post(self, request, *args, **kwargs):
-#        if request.user.is_authenticated:
-#            username=request.user.username
-#            return JsonResponse({"ok":True,"message": "The user {0} already is authenticated".format(username), "data":[{'username':request.user.username}]})
-#
-#        username=request.POST.get('username')
-#        password=request.POST.get('password')
-#        user = authenticate(username=username, password=password)
-#        if user:
-#            login(request,user)#introduce into the request cookies the session_id,
-#                    # and in the auth_sessions the session data. This way, 
-#                    # in followoing requests, know who is the user and if
-#                    # he is already authenticated. 
-#                    # The coockies are sent in the response header on POST requests
-#            return JsonResponse({"ok":True,"message": "User {0} logged in".format(username), "data":[{"username": username}]})
-#        else:
-#            # To make thinks difficult to hackers, you make a random delay,
-#            # between 0 and 1 second
-#            seconds=random.uniform(0, 1)
-#            time.sleep(seconds)
-#            return JsonResponse({"ok":False,"message": "Wrong user or password", "data":[]})
-#
-#class LogoutView(LoginRequiredMixin, View):
-#    def post(self, request, *args, **kwargs):
-#        username=request.user.username
-#        logout(request) #removes from the header of the request
-#                            #the the session_id, stored in a cookie
-#        return JsonResponse({"ok":True,"message": "The user {0} is now logged out".format(username), "data":[]})
-#
-#
-#class IsLoggedIn(View):
-#    def post(self, request, *args, **kwargs):
-#        print(request.user.username)
-#        print(request.user.is_authenticated)
-#        if request.user.is_authenticated:
-#            return JsonResponse({"ok":True,"message": "You are authenticated", "data":[{'username':request.user.username}]})
-#        else:
-#            return JsonResponse({"ok":False,"message": "You are not authenticated", "data":[]})
