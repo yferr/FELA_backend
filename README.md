@@ -8,7 +8,7 @@ It cams with a working example in the buildings app.
 - Clone the repo:
 
 ```ruby
-    git clone https://github.com/joamona/django-api-template.git
+    git clone https://github.com/yferr/FELA_backend.git
 ```
 
 - Change to the project folder:
@@ -28,7 +28,7 @@ It cams with a working example in the buildings app.
 
     - pgadmin: http://localhost:8051
     - geoserver: http://localhost:7002
-    - Django API: http://localhost:8888/FELA
+    - Django API: http://localhost:8888/
 
 # Start developping
 To avoid to install Pyhton and its dependencies in your computer, you can 
@@ -64,6 +64,7 @@ The project cams with three app:
 
 - core: It has the myLib package, who contains the geoModelSerializer. It is a base class to manage models with geometries. Ii uses geodjango.
 - FELA: It contains a model, serializer, and modelViewSet 
+
 
 
 
