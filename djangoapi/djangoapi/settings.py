@@ -51,11 +51,6 @@ INSTALLED_APPS = [
     'drf_yasg',
     #add all your django apps here
     'core',
-    #'codelist',
-    #'buildings',
-    #'flowers',
-    #'smartcities'
-    #'FELA.apps.FELAConfig'
     'FELA'
 ]
 
@@ -69,7 +64,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-#    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -78,7 +73,7 @@ MIDDLEWARE = [
 if DEBUG:
     #CORS_ALLOW_ALL_ORIGINS = True   <-- Not allowed any more for chrome
     #You need to specify the allowed origins
-    CORS_ALLOWED_ORIGINS=['http://localhost:5173']
+    CORS_ALLOWED_ORIGINS=['http://localhost:5173', "http://localhost:3000", 'http://localhost:8888', 'https://nominatim.openstreetmap.org']
 
 #necressary to allow the cookies to be sent in the header of the request
 CORS_ALLOW_CREDENTIALS = True
@@ -89,11 +84,15 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:8080",
     "http://localhost:4200",
     "http://localhost:5173",
+    "https://nominatim.openstreetmap.org"
 ]
 
 # Configuración para que JS pueda leer el token
 CSRF_COOKIE_HTTPONLY = False
 CSRF_COOKIE_SAMESITE = 'Lax'
+
+CSRF_USE_SESSIONS = False
+CSRF_COOKIE_NAME = 'csrftoken'
 
 ROOT_URLCONF = 'djangoapi.urls'
 
@@ -156,9 +155,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # SESIONES
 # ============================================
-SESSION_COOKIE_AGE = 1209600  # 2 semanas
+SESSION_COOKIE_AGE = 3600 #1 hour 
 SESSION_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_HTTPONLY = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_SAVE_EVERY_REQUEST = False
 
 # En producción activar:
 # SESSION_COOKIE_SECURE = True
@@ -178,7 +179,7 @@ SESSION_COOKIE_HTTPONLY = True
 #    }
 #}
 
-# OPCIÓN B: Memoria (si no tienes Redis)
+# OPCIÓN B: Memoria (sin redis Redis)
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',

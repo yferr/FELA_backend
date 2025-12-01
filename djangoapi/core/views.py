@@ -5,7 +5,10 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
 from django.contrib.auth import login, logout
 from django.views.decorators.csrf import ensure_csrf_cookie
+from django.views.decorators.csrf import csrf_exempt
+from django.middleware.csrf import get_token
 from django.utils.decorators import method_decorator
+
 
 from .models import CustomUser
 from .serializers import (
@@ -27,10 +30,22 @@ def get_csrf_token(request):
     Endpoint para obtener el CSRF token.
     Útil para aplicaciones frontend que usan autenticación por sesión.
     
-    GET /api/auth/csrf/
+    GET /auth/csrf/
     """
-    return Response({'detail': 'CSRF cookie set'})
-
+    #return Response({'detail': 'CSRF cookie set'})
+    # Forzar la generación del token
+    token = get_token(request)
+    
+    response = Response({'detail': 'CSRF cookie set'})
+    response.set_cookie(
+        key='csrftoken',
+        value=token,
+        max_age=31449600,  # 1 año
+        httponly=False,  # Permitir que JS lo lea
+        samesite='Lax',
+        secure=False  # En producción cambiar a True
+    )
+    return response
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -39,7 +54,7 @@ def register_view(request):
     Endpoint para registro de nuevos usuarios.
     El usuario queda pendiente de aprobación por el superusuario.
     
-    POST /api/auth/register/
+    POST /auth/register/
     Body:
     {
         "username": "usuario123",
@@ -71,7 +86,7 @@ def login_view(request):
     Endpoint para login de usuarios.
     Utiliza autenticación por sesión de Django.
     
-    POST /api/auth/login/
+    POST /auth/login/
     Body:
     {
         "username": "usuario123",
@@ -100,12 +115,13 @@ def login_view(request):
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
+#@csrf_exempt
 def logout_view(request):
     """
     Endpoint para logout de usuarios.
     Cierra la sesión actual.
     
-    POST /api/auth/logout/
+    POST /auth/logout/
     """
     logout(request)
     return Response(
@@ -120,7 +136,7 @@ def current_user_view(request):
     """
     Endpoint para obtener información del usuario actual.
     
-    GET /api/auth/user/
+    GET /auth/user/
     """
     serializer = UserSerializer(request.user)
     return Response(serializer.data)
@@ -132,7 +148,7 @@ def update_user_view(request):
     """
     Endpoint para actualizar información del usuario actual.
     
-    PUT/PATCH /api/auth/user/update/
+    PUT/PATCH /auth/user/update/
     Body:
     {
         "first_name": "Juan Carlos",
@@ -167,7 +183,7 @@ def change_password_view(request):
     """
     Endpoint para cambiar la contraseña del usuario actual.
     
-    POST /api/auth/change-password/
+    POST /auth/change-password/
     Body:
     {
         "old_password": "contraseña_actual",
@@ -239,7 +255,7 @@ class UserManagementViewSet(viewsets.ModelViewSet):
         """
         Aprueba un usuario pendiente.
         
-        POST /api/auth/users/{id}/approve/
+        POST /auth/users/{id}/approve/
         """
         user = self.get_object()
         
@@ -265,7 +281,7 @@ class UserManagementViewSet(viewsets.ModelViewSet):
         """
         Activa o desactiva un usuario.
         
-        POST /api/auth/users/{id}/toggle_active/
+        POST /auth/users/{id}/toggle_active/
         """
         user = self.get_object()
         
@@ -294,7 +310,7 @@ class UserManagementViewSet(viewsets.ModelViewSet):
         """
         Lista usuarios pendientes de aprobación.
         
-        GET /api/auth/users/pending/
+        GET /auth/users/pending/
         """
         pending_users = CustomUser.objects.filter(
             is_approved=False

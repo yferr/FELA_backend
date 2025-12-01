@@ -8,7 +8,95 @@ from .models import (
 
 
 # ============== NIVEL 1: SERIALIZERS BÁSICOS ==============
-
+#
+#class CountrySerializer(serializers.ModelSerializer):
+#    """Serializer para países con coordenadas obligatorias"""
+#    
+#    class Meta:
+#        model = Country
+#        fields = ['country', 'lat', 'lon']
+#    
+#    def validate(self, data):
+#        #"""Validar que las coordenadas sean obligatorias"""
+#        #if data.get('lat') is None or data.get('lon') is None:
+#        #    raise serializers.ValidationError({
+#        #        'coordinates': 'Las coordenadas (lat, lon) son obligatorias.'
+#        #    })
+#        #return data
+#
+#        """
+#        Validar que las coordenadas sean obligatorias.
+#        Permitir coordenadas (0,0) para países placeholder/temporales
+#        """
+#        lat = data.get('lat')
+#        lon = data.get('lon')
+#        
+#        # Verificar que las coordenadas existan
+#        if lat is None or lon is None:
+#            raise serializers.ValidationError({
+#                'coordinates': 'Las coordenadas (lat, lon) son obligatorias.'
+#            })
+#        
+#        # Permitir (0,0) explícitamente para países placeholder
+#        # Esto permite crear países temporales que se geocodificarán después
+#        if lat == 0 and lon == 0:
+#            country_name = data.get('country', '')
+#            # Solo advertir si no es el país genérico "-"
+#            if country_name != '-':
+#                print(f"⚠️ ADVERTENCIA: País '{country_name}' creado con coordenadas (0,0) - requiere geocodificación")
+#        
+#        return data
+#
+#    def create(self, validated_data):
+#        """
+#        Get-or-create con búsqueda case-insensitive.
+#        Si existe, retorna el existente (mantiene capitalización original).
+#        Si no existe, crea nuevo.
+#        """
+#        country_name = validated_data['country']
+#        
+#        # Buscar case-insensitive
+#        existing = Country.objects.filter(
+#            country__iexact=country_name
+#        ).first()
+#        
+#        if existing:
+#            # Actualizar coordenadas si vienen diferentes
+#        #    if validated_data.get('lat') and validated_data.get('lon'):
+#        #        existing.lat = validated_data['lat']
+#        #        existing.lon = validated_data['lon']
+#        #        existing.save()
+#        #    return existing
+#        #
+#        ## Si no existe, crear nuevo
+#        #return Country.objects.create(**validated_data)
+#
+#        #Actualizar coordenadas solo si las nuevas son válidas (no 0,0)
+#            new_lat = validated_data.get('lat')
+#            new_lon = validated_data.get('lon')
+#            
+#            if new_lat and new_lon and not (new_lat == 0 and new_lon == 0):
+#                # Solo actualizar si las coordenadas son reales (no placeholder)
+#                existing.lat = new_lat
+#                existing.lon = new_lon
+#                existing.save()
+#                print(f"✅ Coordenadas actualizadas para país existente: {country_name}")
+#            
+#            return existing
+#        
+#        # Si no existe, crear nuevo
+#        print(f"🆕 Creando nuevo país: {country_name} con coords ({validated_data['lat']}, {validated_data['lon']})")
+#        return Country.objects.create(**validated_data)
+#    
+#    def update(self, instance, validated_data):
+#        """
+#        Actualiza SOLO las coordenadas.
+#        NO permite cambiar el nombre del país.
+#        """
+#        instance.lat = validated_data.get('lat', instance.lat)
+#        instance.lon = validated_data.get('lon', instance.lon)
+#        instance.save()
+#        return instance
 class CountrySerializer(serializers.ModelSerializer):
     """Serializer para países con coordenadas obligatorias"""
     
@@ -17,11 +105,27 @@ class CountrySerializer(serializers.ModelSerializer):
         fields = ['country', 'lat', 'lon']
     
     def validate(self, data):
-        """Validar que las coordenadas sean obligatorias"""
-        if data.get('lat') is None or data.get('lon') is None:
+        """
+        Validar que las coordenadas sean obligatorias.
+        🆕 CAMBIO: Permitir coordenadas (0,0) para países placeholder/temporales
+        """
+        lat = data.get('lat')
+        lon = data.get('lon')
+        
+        # Verificar que las coordenadas existan
+        if lat is None or lon is None:
             raise serializers.ValidationError({
                 'coordinates': 'Las coordenadas (lat, lon) son obligatorias.'
             })
+        
+        # 🆕 NUEVO: Permitir (0,0) explícitamente para países placeholder
+        # Esto permite crear países temporales que se geocodificarán después
+        if lat == 0 and lon == 0:
+            country_name = data.get('country', '')
+            # Solo advertir si no es el país genérico "-"
+            if country_name != '-':
+                print(f"⚠️ ADVERTENCIA: País '{country_name}' creado con coordenadas (0,0) - requiere geocodificación")
+        
         return data
     
     def create(self, validated_data):
@@ -38,14 +142,21 @@ class CountrySerializer(serializers.ModelSerializer):
         ).first()
         
         if existing:
-            # Actualizar coordenadas si vienen diferentes
-            if validated_data.get('lat') and validated_data.get('lon'):
-                existing.lat = validated_data['lat']
-                existing.lon = validated_data['lon']
+            # 🆕 CAMBIO: Actualizar coordenadas solo si las nuevas son válidas (no 0,0)
+            new_lat = validated_data.get('lat')
+            new_lon = validated_data.get('lon')
+            
+            if new_lat and new_lon and not (new_lat == 0 and new_lon == 0):
+                # Solo actualizar si las coordenadas son reales (no placeholder)
+                existing.lat = new_lat
+                existing.lon = new_lon
                 existing.save()
+                print(f"✅ Coordenadas actualizadas para país existente: {country_name}")
+            
             return existing
         
         # Si no existe, crear nuevo
+        print(f"🆕 Creando nuevo país: {country_name} con coords ({validated_data['lat']}, {validated_data['lon']})")
         return Country.objects.create(**validated_data)
     
     def update(self, instance, validated_data):
@@ -57,7 +168,6 @@ class CountrySerializer(serializers.ModelSerializer):
         instance.lon = validated_data.get('lon', instance.lon)
         instance.save()
         return instance
-
 
 class CitySerializer(serializers.ModelSerializer):
     """Serializer para ciudades con coordenadas obligatorias"""
@@ -355,6 +465,50 @@ class PresentationSerializer(serializers.ModelSerializer):
             )
         return value
 
+    def create(self, validated_data):
+        """
+        Crear presentación convirtiendo event_title de string a objeto Event
+        """
+        event_title_str = validated_data.pop('event_title')
+        
+        # Buscar el evento (case-insensitive)
+        event = Event.objects.filter(event_title__iexact=event_title_str).first()
+        
+        if not event:
+            raise serializers.ValidationError({
+                'event_title': f"El evento '{event_title_str}' no existe."
+            })
+        
+        # Crear la presentación con el objeto Event
+        presentation = Presentation.objects.create(
+            event_title=event,  # ← Pasar objeto, no string
+            **validated_data
+        )
+        
+        return presentation
+
+    def update(self, instance, validated_data):
+        """
+        Actualizar presentación manejando event_title correctamente
+        """
+        event_title_str = validated_data.pop('event_title', None)
+        
+        if event_title_str:
+            # Buscar el evento
+            event = Event.objects.filter(event_title__iexact=event_title_str).first()
+            if not event:
+                raise serializers.ValidationError({
+                    'event_title': f"El evento '{event_title_str}' no existe."
+                })
+            instance.event_title = event
+        
+        # Actualizar otros campos
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        
+        instance.save()
+        return instance
+
 
 # ============== NIVEL 2: SERIALIZERS DE LECTURA ANIDADOS ==============
 
@@ -427,6 +581,8 @@ class SpeakerCreateSerializer(serializers.Serializer):
     """Serializer para crear speakers dentro de presentaciones"""
     name = serializers.CharField(max_length=200)
     country = serializers.CharField(max_length=100)
+#    country_lat = serializers.DecimalField(max_digits=10, decimal_places=7, required=False, default=0)
+#    country_lon = serializers.DecimalField(max_digits=10, decimal_places=7, required=False, default=0)
     agency = serializers.CharField(max_length=150, required=False, allow_blank=True)
 
 
@@ -563,16 +719,49 @@ class EventCompleteCreateSerializer(serializers.Serializer):
                     country__iexact=speaker_country_name
                 ).first()
                 
+                #if not speaker_country:
+                #    # Si el país no existe, usar "-" como país desconocido
+                #    speaker_country = Country.objects.filter(country="-").first()
+                #    if not speaker_country:
+                #        speaker_country = Country.objects.create(
+                #            country="-",
+                #            lat=0,
+                #            lon=0
+                #        )
                 if not speaker_country:
-                    # Si el país no existe, usar "-" como país desconocido
-                    speaker_country = Country.objects.filter(country="-").first()
-                    if not speaker_country:
-                        speaker_country = Country.objects.create(
-                            country="-",
-                            lat=0,
-                            lon=0
+                    print(f"⚠️ País no encontrado para speaker: {speaker_country_name}")
+                    print(f"🆕 Intentando crear país placeholder con coordenadas (0,0)")
+                    
+                    # Usar get_or_create para evitar duplicados
+                    try:
+                        speaker_country, created = Country.objects.get_or_create(
+                            country=speaker_country_name,
+                            defaults={
+                                'lat': 0,
+                                'lon': 0
+                            }
                         )
-                
+                        if created:
+                            print(f"✅ País placeholder creado: {speaker_country_name}")
+                        else:
+                            print(f"ℹ️ País ya existía: {speaker_country_name}")
+                            
+                    except Exception as e:
+                        # Si falla, usar país genérico "-"
+                        print(f"❌ Error con país '{speaker_country_name}': {e}")
+                        print(f"🔄 Usando país genérico '-' como fallback")
+                        
+                        # get_or_create también para el país genérico
+                        speaker_country, _ = Country.objects.get_or_create(
+                            country="-",
+                            defaults={
+                                'lat': 0,  # Usará estos valores solo si no existe
+                                'lon': 0
+                            }
+                        )
+                        # ⚠️ IMPORTANTE: Si "-" ya existe con otras coordenadas,
+                        # las mantiene (no las sobrescribe)
+
                 # Buscar/crear speaker (case-insensitive por nombre+país)
                 speaker = Speaker.objects.filter(
                     name__iexact=speaker_name,
