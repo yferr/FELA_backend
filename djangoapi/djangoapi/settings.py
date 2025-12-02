@@ -32,7 +32,17 @@ REMOTE_DEBUG = False
 #DEBUG= False
 DEBUG = os.getenv("DEBUG", 'False').lower() in ('true', '1', 't')
 
-ALLOWED_HOSTS = [os.getenv('DJANGO_ALLOWED_HOSTS')]
+allowed_hosts_str = os.getenv('DJANGO_ALLOWED_HOSTS')
+if allowed_hosts_str:
+    # Si la variable de entorno es el comodín, asigna la lista con el comodín
+    if allowed_hosts_str == '*':
+        ALLOWED_HOSTS = ['*']
+    else:
+        # Si son hosts específicos, los separa y limpia
+        ALLOWED_HOSTS = [host.strip() for host in allowed_hosts_str.split(',')]
+else:
+    # Si la variable no existe, asigna una lista vacía para seguridad
+    ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -87,7 +97,8 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:8080",
     "http://localhost:4200",
     "http://localhost:5173",
-    "https://nominatim.openstreetmap.org"
+    "https://nominatim.openstreetmap.org",
+    'https://gisserver.car.upv.es'
 ]
 
 # Configuración para que JS pueda leer el token
