@@ -1,3 +1,5 @@
+
+
 #from django.db import models
 from django.contrib.gis.db import models
 from django.contrib.postgres.fields import ArrayField
@@ -44,38 +46,7 @@ class City(models.Model):
     def __str__(self):
         return f"{self.city}, {self.country.country}"
 
-#class CountryTemp(models.Model):
-#    """Tabla temporal con coordenadas lat/lon para países"""
-#    country = models.CharField(max_length=100, primary_key=True)
-#    lat = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
-#    lon = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
-#
-#    class Meta:
-#        managed = False
-#        db_table = 'eventos"."countries_tmp'
-#        verbose_name = 'Country Temp'
-#        verbose_name_plural = 'Countries Temp'
-#
-#    def __str__(self):
-#        return self.country
-
-
-#class CityTemp(models.Model):
-#    """Tabla temporal con coordenadas lat/lon para ciudades"""
-#    country = models.CharField(max_length=100)
-#    city = models.CharField(max_length=100)
-#    lat = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
-#    lon = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
-#
-#    class Meta:
-#        managed = False
-#        db_table = 'eventos"."cities_tmp'
-#        verbose_name = 'City Temp'
-#        verbose_name_plural = 'Cities Temp'
-#
-#    def __str__(self):
-#        return f"{self.city}, {self.country}"
-    
+ 
 class Agency(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=150, unique=True)
