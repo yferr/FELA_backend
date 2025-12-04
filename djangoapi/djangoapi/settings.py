@@ -18,7 +18,9 @@ EPSG_FOR_GEOMETRIES=int(os.getenv('EPSG_FOR_GEOMETRIES',4326))
 ST_SNAP_PRECISION=float(os.getenv('ST_SNAP_PRECISION',0.0001))
 MAX_NUMBER_OF_RETRIEVED_ROWS=int(os.getenv('MAX_NUMBER_OF_RETRIEVED_ROWS',1000))
 
-FORCE_SCRIPT_NAME=os.getenv('FORCE_SCRIPT_NAME')
+
+#use in prod 
+#FORCE_SCRIPT_NAME=os.getenv('FORCE_SCRIPT_NAME')
 
 
 # Quick-start development settings - unsuitable for production
@@ -32,18 +34,22 @@ REMOTE_DEBUG = False
 #DEBUG= False
 DEBUG = os.getenv("DEBUG", 'False').lower() in ('true', '1', 't')
 
-allowed_hosts_str = os.getenv('DJANGO_ALLOWED_HOSTS')
-if allowed_hosts_str:
-    # Si la variable de entorno es el comodín, asigna la lista con el comodín
-    if allowed_hosts_str == '*':
-        ALLOWED_HOSTS = ['*']
-    else:
-        # Si son hosts específicos, los separa y limpia
-        ALLOWED_HOSTS = [host.strip() for host in allowed_hosts_str.split(',')]
-else:
-    # Si la variable no existe, asigna una lista vacía para seguridad
-    ALLOWED_HOSTS = []
+#use on dev
+ALLOWED_HOSTS = [os.getenv('DJANGO_ALLOWED_HOSTS')]
 
+#use on prod 
+#allowed_hosts_str = os.getenv('DJANGO_ALLOWED_HOSTS')
+#if allowed_hosts_str:
+#    # Si la variable de entorno es el comodín, asigna la lista con el comodín
+#    if allowed_hosts_str == '*':
+#        ALLOWED_HOSTS = ['*']
+#    else:
+#        # Si son hosts específicos, los separa y limpia
+#        ALLOWED_HOSTS = [host.strip() for host in allowed_hosts_str.split(',')]
+#else:
+#    # Si la variable no existe, asigna una lista vacía para seguridad
+#    ALLOWED_HOSTS = []
+#
 
 # Application definition
 
@@ -175,25 +181,9 @@ SESSION_COOKIE_HTTPONLY = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_SAVE_EVERY_REQUEST = False
 
-# En producción activar:
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
 
-# CACHÉ 
-# Redis 
-#CACHES = {
-#    'default': {
-#        'BACKEND': 'django_redis.cache.RedisCache',
-#        'LOCATION': 'redis://redis:6379/1',
-#        'OPTIONS': {
-#            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-#        },
-#        'KEY_PREFIX': 'FELA',
-#        'TIMEOUT': 60 * 60 * 24 * 7,  # 7 días
-#    }
-#}
 
-# OPCIÓN B: Memoria (sin redis Redis)
+# Memoria 
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
@@ -217,32 +207,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = os.getenv('DJANGO_STATIC_URL')
-MEDIA_URL = 'media/'
 
-#STATIC_ROOT = '/usr/src/static_root'
-STATIC_ROOT = BASE_DIR / 'static_root'
-MEDIA_ROOT = BASE_DIR / 'media_root'
+#use in dev
+STATIC_URL = 'static/'
+
+# use in prod 
+
+#STATIC_URL = os.getenv('DJANGO_STATIC_URL')
+#MEDIA_URL = 'media/'
+#
+##STATIC_ROOT = '/usr/src/static_root'
+#STATIC_ROOT = BASE_DIR / 'static_root'
+#MEDIA_ROOT = BASE_DIR / 'media_root'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#On logout, redirect to the login page
-#LOGOUT_REDIRECT_URL = "/accounts/login/"
 
-#if you try to use a view without being logged in, redirect to the following URL
-#if DEBUG:
-#    LOGIN_URL = "/core/not_loggedin/"
-#else:
-#    LOGIN_URL = "/desweb-api/core/not_loggedin/"
-
-#REST_FRAMEWORK = {
-#    'DEFAULT_FILTER_BACKENDS': (
-#        'django_filters.rest_framework.DjangoFilterBackend',
-#    ),
-#}
 REST_FRAMEWORK = {
     # Autenticación por sesión
     'DEFAULT_AUTHENTICATION_CLASSES': [
