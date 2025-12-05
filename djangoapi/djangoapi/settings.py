@@ -216,17 +216,13 @@ USE_TZ = True
 STATIC_URL = os.getenv('DJANGO_STATIC_URL')
 MEDIA_URL = 'media/'
 
-#STATIC_ROOT = '/usr/src/static_root'
-#STATIC_ROOT = BASE_DIR / 'static_root'
-#MEDIA_ROOT = BASE_DIR / 'media_root'
-STATIC_ROOT = str(BASE_DIR) + '/' + str(os.getenv('STATIC_ROOT'))
-MEDIA_ROOT = str(BASE_DIR) + '/' + str(os.getenv('MEDIA_ROOT'))
+STATIC_ROOT = str(BASE_DIR) + '/' + str(os.getenv('DJANGO_STATIC_URL'))
+MEDIA_ROOT = str(BASE_DIR) + '/' + str(os.getenv('DJANGO_MEDIA_URL'))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 REST_FRAMEWORK = {
     # Autenticación por sesión
