@@ -20,7 +20,7 @@ MAX_NUMBER_OF_RETRIEVED_ROWS=int(os.getenv('MAX_NUMBER_OF_RETRIEVED_ROWS',1000))
 
 
 #use in prod 
-#FORCE_SCRIPT_NAME=os.getenv('FORCE_SCRIPT_NAME')
+FORCE_SCRIPT_NAME=os.getenv('FORCE_SCRIPT_NAME')
 
 
 # Quick-start development settings - unsuitable for production
@@ -35,23 +35,23 @@ REMOTE_DEBUG = False
 DEBUG = os.getenv("DEBUG", 'False').lower() in ('true', '1', 't')
 
 #use in dev
-ALLOWED_HOSTS = [os.getenv('DJANGO_ALLOWED_HOSTS')]
+#ALLOWED_HOSTS = [os.getenv('DJANGO_ALLOWED_HOSTS')]
 
 #------------------ use in prod --------------------------------------------
-#allowed_hosts_str = os.getenv('DJANGO_ALLOWED_HOSTS')
-#if allowed_hosts_str:
-#    # Si la variable de entorno es el comodín, asigna la lista con el comodín
-#    if allowed_hosts_str == '*':
-#        ALLOWED_HOSTS = ['*']
-#    else:
-#        # Si son hosts específicos, los separa y limpia
-#        ALLOWED_HOSTS = [host.strip() for host in allowed_hosts_str.split(',')]
-#else:
-#    # Si la variable no existe, asigna una lista vacía para seguridad
-#    ALLOWED_HOSTS = []
-#
+allowed_hosts_str = os.getenv('DJANGO_ALLOWED_HOSTS')
+if allowed_hosts_str:
+   # Si la variable de entorno es el comodín, asigna la lista con el comodín
+   if allowed_hosts_str == '*':
+       ALLOWED_HOSTS = ['*']
+   else:
+       # Si son hosts específicos, los separa y limpia
+       ALLOWED_HOSTS = [host.strip() for host in allowed_hosts_str.split(',')]
+else:
+   # Si la variable no existe, asigna una lista vacía para seguridad
+   ALLOWED_HOSTS = []
 
-# Application definition
+
+Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -209,16 +209,20 @@ USE_TZ = True
 
 
 #use in dev
-STATIC_URL = 'static/'
+#STATIC_URL = 'static/'
 
 # --------------------------use in prod ------------------------------
 
-#STATIC_URL = os.getenv('DJANGO_STATIC_URL')
-#MEDIA_URL = 'media/'
-#
-##STATIC_ROOT = '/usr/src/static_root'
+STATIC_URL = os.getenv('DJANGO_STATIC_URL')
+MEDIA_URL = 'media/'
+
+#STATIC_ROOT = '/usr/src/static_root'
 #STATIC_ROOT = BASE_DIR / 'static_root'
 #MEDIA_ROOT = BASE_DIR / 'media_root'
+STATIC_ROOT = BASE_DIR / os.getenv('STATIC_ROOT')
+MEDIA_ROOT = BASE_DIR / os.getenv('MEDIA_ROOT')
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -272,4 +276,5 @@ else:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 #use in prod
-#EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+if DEBUG:
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
