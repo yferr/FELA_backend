@@ -219,10 +219,8 @@ MEDIA_URL = 'media/'
 #STATIC_ROOT = '/usr/src/static_root'
 #STATIC_ROOT = BASE_DIR / 'static_root'
 #MEDIA_ROOT = BASE_DIR / 'media_root'
-STATIC_ROOT = BASE_DIR / os.getenv('STATIC_ROOT')
-MEDIA_ROOT = BASE_DIR / os.getenv('MEDIA_ROOT')
-
-
+STATIC_ROOT = str(BASE_DIR) + '/' + str(os.getenv('STATIC_ROOT'))
+MEDIA_ROOT = str(BASE_DIR) + '/' + str(os.getenv('MEDIA_ROOT'))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
