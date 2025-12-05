@@ -92,7 +92,11 @@ MIDDLEWARE = [
 if DEBUG:
     #CORS_ALLOW_ALL_ORIGINS = True   <-- Not allowed any more for chrome
     #You need to specify the allowed origins
-    CORS_ALLOWED_ORIGINS=['http://localhost:5173', "http://localhost:3000", 'http://localhost:8888', 'https://nominatim.openstreetmap.org']
+    CORS_ALLOWED_ORIGINS=['http://localhost:5173', 
+                          "http://localhost:3000", 
+                          'http://localhost:8888', 
+                          'https://nominatim.openstreetmap.org',
+                          'https://gisserver.car.upv.es']
 
 #necressary to allow the cookies to be sent in the header of the request
 CORS_ALLOW_CREDENTIALS = True
