@@ -34,10 +34,10 @@ REMOTE_DEBUG = False
 #DEBUG= False
 DEBUG = os.getenv("DEBUG", 'False').lower() in ('true', '1', 't')
 
-#use on dev
+#use in dev
 ALLOWED_HOSTS = [os.getenv('DJANGO_ALLOWED_HOSTS')]
 
-#use on prod 
+#------------------ use in prod --------------------------------------------
 #allowed_hosts_str = os.getenv('DJANGO_ALLOWED_HOSTS')
 #if allowed_hosts_str:
 #    # Si la variable de entorno es el comodín, asigna la lista con el comodín
@@ -211,7 +211,7 @@ USE_TZ = True
 #use in dev
 STATIC_URL = 'static/'
 
-# use in prod 
+# --------------------------use in prod ------------------------------
 
 #STATIC_URL = os.getenv('DJANGO_STATIC_URL')
 #MEDIA_URL = 'media/'
@@ -250,3 +250,26 @@ REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
 }
 
+# CONFIGURACIÓN DE EMAIL
+
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS','True').lower() == 'true' #Devuelve True si se cumple
+EMAIL_PORT = os.getenv('EMAIL_PORT')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_UPV = os.getenv('EMAIL_UPV')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_FROM = os.getenv('EMAIL_FROM')
+
+# Administradores que recibirán emails de notificación
+ADMINS=[('Gaspar Mora', 'joamona@cgf.upv.es')]
+
+
+# En desarrollo, guardar emails en archivos en lugar de enviarlos
+if DEBUG:
+    EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+    EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+else:
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+#use in prod
+#EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"

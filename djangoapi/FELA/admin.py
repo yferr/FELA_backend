@@ -36,7 +36,6 @@ class PresentationSpeakerAdmin(admin.ModelAdmin):
     search_fields = ('id_presentation', 'id_speaker')
 admin.site.register(models.PresentationSpeaker, PresentationSpeakerAdmin)
 
-
 class EventAgencyAdmin(admin.ModelAdmin):
     list_display = ('id_event', 'id_agencia')
     search_fields = ('id_event', 'id_agencia')

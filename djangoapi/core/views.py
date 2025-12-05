@@ -8,7 +8,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.csrf import csrf_exempt
 from django.middleware.csrf import get_token
 from django.utils.decorators import method_decorator
-
+from .emails import send_registration_notification_to_admin, send_approval_notification_to_user
 
 from .models import CustomUser
 from .serializers import (
@@ -69,6 +69,15 @@ def register_view(request):
     serializer = RegisterSerializer(data=request.data)
     if serializer.is_valid():
         user = serializer.save()
+
+        # Enviar email al administrador
+        try:
+            send_registration_notification_to_admin(user)
+            print(f"✅ Email de notificación enviado al admin por registro de {user.username}")
+        except Exception as e:
+            # No fallar el registro si el email falla
+            print(f"⚠️ Error enviando email de notificación: {e}")
+
         return Response(
             {
                 "message": "Usuario registrado exitosamente. Tu cuenta está pendiente de aprobación por el administrador.",
@@ -267,6 +276,14 @@ class UserManagementViewSet(viewsets.ModelViewSet):
         
         user.is_approved = True
         user.save()
+
+        # Enviar email al usuario notificando la aprobación
+        try:
+            send_approval_notification_to_user(user)
+            print(f"✅ Email de aprobación enviado a {user.email}")
+        except Exception as e:
+            # No fallar la aprobación si el email falla
+            print(f"⚠️ Error enviando email de aprobación: {e}")
         
         return Response(
             {
