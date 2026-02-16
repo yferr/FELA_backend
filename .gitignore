@@ -87,6 +87,7 @@ venv.bak/
 .env.prod
 #folder with the postgis data
 postgis-data
+postgis-data-reestructuracion
 #pgadmin4 data folder for develop environment
 pgadmin4
 #pgadmin4 data folder for production environment

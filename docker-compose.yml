@@ -12,7 +12,7 @@ services:
     ports:
       - 127.0.0.1:${DEVELOP_DOCKER_POSTGIS_FORWARDED_PORT}:5432
     volumes: 
-      - ./postgis-data:/var/lib/postgresql/data
+      - ./postgis-data-reestructuracion:/var/lib/postgresql/data
 
     #to ckeck if postgres is already ready. It is used in the depends_on section
     #of the services that use this service.
