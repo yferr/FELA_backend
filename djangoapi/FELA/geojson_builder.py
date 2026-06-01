@@ -81,6 +81,8 @@ class GeoJSONBuilder:
             titles[presentation.title] = [self._build_presentation_data(presentation)]
 
         return {
+            "id": event.id,
+            "created_by": event.created_by.username if event.created_by else None,
             "date": event.date or "",
             "type": event.type or "",
             "agency": agencies,
@@ -94,6 +96,8 @@ class GeoJSONBuilder:
             country_name = speaker.country.country if speaker.country else "-"
             agency_name = speaker.agency.name if speaker.agency else ""
             speakers.append({
+                "id": speaker.id,
+                "created_by": speaker.created_by.username if speaker.created_by else None,
                 "speaker": speaker.name,
                 "country": country_name,
                 "agency": agency_name
@@ -102,6 +106,8 @@ class GeoJSONBuilder:
         language = presentation.language if presentation.language else []
 
         return {
+            "id": presentation.id,
+            "created_by": presentation.created_by.username if presentation.created_by else None,
             "speakers": speakers,
             "language": language,
             "URL_document": presentation.url_document or "",
