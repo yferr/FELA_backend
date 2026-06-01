@@ -64,7 +64,7 @@ def geojson_complete_view(request):
 
 
 @api_view(['POST'])
-@permission_classes([AllowAny])  # Cambiar a IsAdminUser si prefieres
+@permission_classes([AllowAny])  # Cambiar a IsAdminUser 
 def geojson_refresh_view(request):
     """
     Endpoint manual para invalidar el caché del GeoJSON.

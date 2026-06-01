@@ -23,7 +23,11 @@ It cams with a working example in the buildings app.
 - Create the containers and start the services:
 ```ruby
     docker compose up
+    docker exec -it <project>-djangoapi-1 /bin/sh
+    ./initdb.sh
 ```
+Run tests: python manage.py test FELA.tests
+
 - Check the services:
 
     - pgadmin: http://localhost:8051
@@ -64,7 +68,4 @@ The project cams with three app:
 
 - core: It has the myLib package, who contains the geoModelSerializer. It is a base class to manage models with geometries. Ii uses geodjango.
 - FELA: It contains a model, serializer, and modelViewSet 
-
-
-
 

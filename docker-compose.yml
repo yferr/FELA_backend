@@ -12,7 +12,7 @@ services:
     ports:
       - 127.0.0.1:${DEVELOP_DOCKER_POSTGIS_FORWARDED_PORT}:5432
     volumes: 
-      - ./postgis-data-reestructuracion:/var/lib/postgresql/data
+      - ./postgis-data:/var/lib/postgresql/data
 
     #to ckeck if postgres is already ready. It is used in the depends_on section
     #of the services that use this service.
@@ -28,21 +28,21 @@ services:
     networks:
       - postgis
 
-  # pgadmin4:
-  #   image: dpage/pgadmin4:8.3
-  #   env_file:
-  #     - .env.dev
-  #   volumes:
-  #     - ./pgadmin4/data:/var/lib/pgadmin
-  #     - ./pgadmin4/servers/servers.json:/pgadmin4/servers.json
-  #   ports:
-  #    - 127.0.0.1:${DEVELOP_DOCKER_PGADMIN_FORWARDED_PORT}:80
-  #   restart: "no"
-  #   depends_on:
-  #     postgis:
-  #       condition: service_healthy
-  #   networks:
-  #     - postgis
+  pgadmin4:
+    image: dpage/pgadmin4:8.3
+    env_file:
+      - .env.dev
+    volumes:
+      - ./pgadmin4/data:/var/lib/pgadmin
+      - ./pgadmin4/servers/servers.json:/pgadmin4/servers.json
+    ports:
+     - 127.0.0.1:${DEVELOP_DOCKER_PGADMIN_FORWARDED_PORT}:80
+    restart: "no"
+    depends_on:
+      postgis:
+        condition: service_healthy
+    networks:
+      - postgis
 
   # geoserver:
   #    image: docker.osgeo.org/geoserver:2.24.2
@@ -83,12 +83,6 @@ services:
     depends_on:
       postgis:
         condition: service_healthy
-#  redis:
-#    image: redis:7
-#    container_name: redis
-#    restart: always
-#    ports:
-#      - "127.0.0.1:${GISSERVER_DOCKER_REDIS_FORWARDED_PORT}:6379"
 
 networks:
    postgis:

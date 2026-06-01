@@ -1,17 +1,37 @@
+"""
+models.py  —  FELA application models
 
+Changes from previous version:
+- All models now inherit from AuditModel (adds created_by, created_at, updated_at)
+- managed = True  →  Django creates and manages all tables via migrations
+- Schema changed from  eventos"."<plural>  to  events"."<singular>
+- Field renames (tutor conventions):
+    Agency  : nombre       → name
+    Event   : country_e   → country,   city_e → city
+    Speaker : country_s   → country,   agency_s (CharField) → agency (ForeignKey)
+    Presentation : event_title (FK to text) → event (FK to id)
+    PresentationSpeaker : id_presentation → presentation, id_speaker → speaker
+    EventAgency         : id_event → event, id_agencia → agency
+- No manual primary keys (Django generates id automatically)
+"""
 
-#from django.db import models
 from django.contrib.gis.db import models
 from django.contrib.postgres.fields import ArrayField
 
 from djangoapi.settings import EPSG_FOR_GEOMETRIES
-# Create your models here.
+from .audit import AuditModel
 
-class Country(models.Model):
+
+# ---------------------------------------------------------------------------
+# Country
+# ---------------------------------------------------------------------------
+
+class Country(AuditModel):
     country = models.CharField(max_length=100, unique=True)
     geom = models.PointField(srid=4326, null=True, blank=True)
     lat = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
     lon = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
+
     class Meta:
         db_table = 'events"."country'
         verbose_name = 'Country'
@@ -21,14 +41,21 @@ class Country(models.Model):
         return self.country
 
 
-class City(models.Model):
-    #hago que apunte al id no al nombre del país
-    country = models.ForeignKey(Country, on_delete=models.RESTRICT,related_name='cities')
+# ---------------------------------------------------------------------------
+# City
+# ---------------------------------------------------------------------------
+
+class City(AuditModel):
+    country = models.ForeignKey(
+        Country,
+        on_delete=models.RESTRICT,
+        related_name='cities'
+    )
     city = models.CharField(max_length=100)
     geom = models.PointField(srid=4326, null=True, blank=True)
     lat = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
     lon = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
-    
+
     class Meta:
         db_table = 'events"."city'
         unique_together = ('country', 'city')
@@ -38,8 +65,12 @@ class City(models.Model):
     def __str__(self):
         return f"{self.city}, {self.country.country}"
 
- 
-class Agency(models.Model):
+
+# ---------------------------------------------------------------------------
+# Agency
+# ---------------------------------------------------------------------------
+
+class Agency(AuditModel):
     name = models.CharField(max_length=150, unique=True)
     long_name = models.TextField(blank=True, null=True)
 
@@ -52,15 +83,27 @@ class Agency(models.Model):
         return self.name
 
 
-class Event(models.Model):
+# ---------------------------------------------------------------------------
+# Event
+# ---------------------------------------------------------------------------
+
+class Event(AuditModel):
     date = models.CharField(max_length=50, null=True, blank=True)
     year = models.IntegerField(null=True, blank=True)
     type = models.CharField(max_length=100, null=True, blank=True)
-    #Modifico para que apunte al id del country
-    country = models.ForeignKey(Country, on_delete=models.RESTRICT, related_name='events_country_e')
+    country = models.ForeignKey(
+        Country,
+        on_delete=models.RESTRICT,
+        related_name='events_country_e'
+    )
     city = models.CharField(max_length=100)
     event_title = models.TextField(unique=True)
-    agency = models.ManyToManyField(Agency, through='EventAgency', related_name='events_agencies')
+    agency = models.ManyToManyField(
+        Agency,
+        through='EventAgency',
+        related_name='events_agencies'
+    )
+
     class Meta:
         db_table = 'events"."event'
         verbose_name = 'Event'
@@ -71,24 +114,31 @@ class Event(models.Model):
 
     @property
     def city_object(self):
-        """Retorna el objeto City completo basado en country_e y city_e"""
+        """Returns the full City object based on country and city name."""
         try:
             return City.objects.get(country=self.country, city=self.city)
         except City.DoesNotExist:
             return None
 
 
-class Presentation(models.Model):
+# ---------------------------------------------------------------------------
+# Presentation
+# ---------------------------------------------------------------------------
+
+class Presentation(AuditModel):
     title = models.TextField()
-    #Modifico para que apunte al id de Event
-    event = models.ForeignKey(Event, on_delete=models.CASCADE,  related_name='presentations_event')
+    event = models.ForeignKey(
+        Event,
+        on_delete=models.CASCADE,
+        related_name='presentations_event'
+    )
     language = ArrayField(
         models.CharField(max_length=50),
         blank=True,
         null=True,
         default=list
     )
-    url_document = models.TextField(null=True, blank=True, db_column='url_document')
+    url_document = models.TextField(null=True, blank=True)
     observations = models.TextField(null=True, blank=True)
 
     class Meta:
@@ -100,12 +150,24 @@ class Presentation(models.Model):
         return self.title
 
 
-class Speaker(models.Model):
+# ---------------------------------------------------------------------------
+# Speaker
+# ---------------------------------------------------------------------------
+
+class Speaker(AuditModel):
     name = models.CharField(max_length=200)
-    #Mofifico para que apunte a id
-    country = models.ForeignKey(Country, on_delete=models.RESTRICT, related_name='speaker_country')
-    agency = models.ForeignKey(Agency, on_delete=models.RESTRICT, related_name='speaker_agency')
-   
+    country = models.ForeignKey(
+        Country,
+        on_delete=models.RESTRICT,
+        related_name='speaker_country'
+    )
+    agency = models.ForeignKey(
+        Agency,
+        on_delete=models.RESTRICT,
+        related_name='speaker_agency',
+        null=True,
+        blank=True
+    )
     presentations = models.ManyToManyField(
         Presentation,
         through='PresentationSpeaker',
@@ -114,7 +176,6 @@ class Speaker(models.Model):
 
     class Meta:
         db_table = 'events"."speaker'
-        # Constraint único por nombre + país
         unique_together = ('name', 'country')
         verbose_name = 'Speaker'
         verbose_name_plural = 'Speakers'
@@ -123,10 +184,19 @@ class Speaker(models.Model):
         return f"{self.name} ({self.country.country})"
 
 
-class PresentationSpeaker(models.Model):
-    #Modifico para que apunte al id
-    presentation = models.ForeignKey(Presentation, on_delete=models.CASCADE)
-    speaker = models.ForeignKey(Speaker,on_delete=models.CASCADE)
+# ---------------------------------------------------------------------------
+# PresentationSpeaker  (intermediate table)
+# ---------------------------------------------------------------------------
+
+class PresentationSpeaker(AuditModel):
+    presentation = models.ForeignKey(
+        Presentation,
+        on_delete=models.CASCADE
+    )
+    speaker = models.ForeignKey(
+        Speaker,
+        on_delete=models.CASCADE
+    )
 
     class Meta:
         db_table = 'events"."presentation_speaker'
@@ -135,12 +205,22 @@ class PresentationSpeaker(models.Model):
         verbose_name_plural = 'Presentation Speakers'
 
     def __str__(self):
-        return f"{self.speaker.name} - {self.presentation.title}"
+        return f"{self.speaker.name} — {self.presentation.title}"
 
 
-class EventAgency(models.Model):
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
-    agency = models.ForeignKey(Agency, on_delete=models.CASCADE)
+# ---------------------------------------------------------------------------
+# EventAgency  (intermediate table)
+# ---------------------------------------------------------------------------
+
+class EventAgency(AuditModel):
+    event = models.ForeignKey(
+        Event,
+        on_delete=models.CASCADE
+    )
+    agency = models.ForeignKey(
+        Agency,
+        on_delete=models.CASCADE
+    )
 
     class Meta:
         db_table = 'events"."event_agency'
@@ -149,4 +229,4 @@ class EventAgency(models.Model):
         verbose_name_plural = 'Event Agencies'
 
     def __str__(self):
-        return f"{self.event.event_title} - {self.agency.name}"
+        return f"{self.event.event_title} — {self.agency.name}"

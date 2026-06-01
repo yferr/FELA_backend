@@ -105,6 +105,7 @@ CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8080",
+    "http://localhost:8888",
     "http://localhost:4200",
     "http://localhost:5173",
     "https://nominatim.openstreetmap.org",
@@ -153,7 +154,7 @@ DATABASES = {
         'HOST': os.getenv('POSTGRES_HOST'),
         'PORT': os.getenv('POSTGRES_PORT'),
         'OPTIONS': {
-            'options': '-c search_path=eventos,public',
+            'options': '-c search_path=public',
         }
     }
 }

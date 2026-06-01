@@ -1,3 +1,15 @@
+"""
+geojson_builder.py  —  Builds the complete GeoJSON response
+
+Changes from previous version:
+- agency.nombre  → agency.name
+- event.country_e / event.city_e  → event.country / event.city
+- speaker.country_s → speaker.country
+- speaker.agency_s (string) → speaker.agency.name (FK)
+- related_name 'presentations' → 'presentations_event'
+- related_name 'agencies' → 'agency' (M2M field name)
+- select_related / prefetch_related updated accordingly
+"""
 from datetime import datetime
 from django.db.models import Prefetch
 from .models import (
@@ -7,18 +19,9 @@ from .models import (
 
 
 class GeoJSONBuilder:
-    """
-    Constructor del GeoJSON completo con la estructura específica requerida.
-    """
+    """Builds the complete GeoJSON with the required nested structure."""
 
     def build_complete_geojson(self):
-        """
-        Genera el GeoJSON completo con:
-        - events: estructura anidada por año y evento
-        - citiesGeoJSON: GeoJSON de ciudades
-        - countriesGeoJSON: GeoJSON de países
-        - metadata: información sobre la generación
-        """
         return {
             "metadata": self._build_metadata(),
             "events": self._build_events(),
@@ -27,10 +30,8 @@ class GeoJSONBuilder:
         }
 
     def _build_metadata(self):
-        """Construye metadata sobre el GeoJSON"""
         total_events = Event.objects.count()
         years = Event.objects.values_list('year', flat=True).distinct().order_by('year')
-        
         return {
             "generated_at": datetime.now().isoformat(),
             "total_events": total_events,
@@ -39,74 +40,45 @@ class GeoJSONBuilder:
         }
 
     def _build_events(self):
-        """
-        Construye la estructura de eventos anidada:
-        {
-            "2017": {
-                "Event Title 1": [{ event_data }],
-                "Event Title 2": [{ event_data }]
-            },
-            "2018": { ... }
-        }
-        """
-        # Optimizar consultas con prefetch_related
-        events = Event.objects.select_related('country_e').prefetch_related(
+        events = Event.objects.select_related('country').prefetch_related(
             Prefetch(
-                'presentations',
+                'presentations_event',
                 queryset=Presentation.objects.prefetch_related(
                     Prefetch(
                         'speakers',
-                        queryset=Speaker.objects.select_related('country_s')
+                        queryset=Speaker.objects.select_related('country', 'agency')
                     )
                 )
             ),
-            Prefetch(
-                'agencies',
-                queryset=Agency.objects.all()
-            )
+            Prefetch('agency', queryset=Agency.objects.all())
         ).all()
 
         events_structure = {}
 
         for event in events:
             year_key = str(event.year) if event.year else "Unknown"
-            
-            # Inicializar año si no existe
             if year_key not in events_structure:
                 events_structure[year_key] = {}
-            
-            # Inicializar evento (como array con 1 elemento)
             if event.event_title not in events_structure[year_key]:
                 events_structure[year_key][event.event_title] = []
-            
-            # Construir datos del evento
-            event_data = self._build_event_data(event)
-            events_structure[year_key][event.event_title].append(event_data)
+            events_structure[year_key][event.event_title].append(
+                self._build_event_data(event)
+            )
 
         return events_structure
 
     def _build_event_data(self, event):
-        """Construye los datos de un evento individual"""
-        # Obtener agencias relacionadas
-        agencies = [
-            agency.nombre 
-            for agency in event.agencies.all()
-        ]
+        # Agency names from M2M (field name is 'agency')
+        agencies = [ag.name for ag in event.agency.all()]
 
-        # Construir lugar (array con 1 elemento)
-        # ✅ CORRECCIÓN: Acceder al valor .country del objeto Country
         place = [{
-            "country": event.country_e.country,  # ✅ .country para obtener el string
-            "city": event.city_e  # ✅ Ya es string
+            "country": event.country.country,   # country FK → .country string
+            "city": event.city                   # city is a CharField
         }]
 
-        # Construir presentaciones agrupadas por título
         titles = {}
-        for presentation in event.presentations.all():
-            # Cada título tiene un array con 1 objeto
-            titles[presentation.title] = [
-                self._build_presentation_data(presentation)
-            ]
+        for presentation in event.presentations_event.all():
+            titles[presentation.title] = [self._build_presentation_data(presentation)]
 
         return {
             "date": event.date or "",
@@ -117,20 +89,16 @@ class GeoJSONBuilder:
         }
 
     def _build_presentation_data(self, presentation):
-        """Construye los datos de una presentación"""
-        # Obtener speakers relacionados
         speakers = []
         for speaker in presentation.speakers.all():
-            # ✅ CORRECCIÓN: Acceder a .country del objeto Country
-            country_name = speaker.country_s.country if speaker.country_s else "-"
-            
+            country_name = speaker.country.country if speaker.country else "-"
+            agency_name = speaker.agency.name if speaker.agency else ""
             speakers.append({
                 "speaker": speaker.name,
-                "country_s": country_name,  # ✅ Ahora es string
-                "agency_s": speaker.agency_s or ""
+                "country": country_name,
+                "agency": agency_name
             })
 
-        # Language como array (ya es array en el modelo)
         language = presentation.language if presentation.language else []
 
         return {
@@ -141,64 +109,34 @@ class GeoJSONBuilder:
         }
 
     def _build_cities_geojson(self):
-        """
-        Construye el GeoJSON de ciudades usando cities con lat/lon
-        """
         cities = City.objects.select_related('country').all()
-
         features = []
         for city in cities:
-            # Solo incluir si tiene coordenadas
-            # ✅ CORRECCIÓN: Convertir Decimal a float y acceder a .country
             if city.lon is not None and city.lat is not None:
-                feature = {
+                features.append({
                     "type": "Feature",
                     "properties": {
-                        "country": city.country.country,  # ✅ .country para obtener string
+                        "country": city.country.country,
                         "city": city.city
                     },
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [
-                            float(city.lon),  # ✅ Convertir Decimal a float
-                            float(city.lat)   # ✅ Convertir Decimal a float
-                        ]
+                        "coordinates": [float(city.lon), float(city.lat)]
                     }
-                }
-                features.append(feature)
-
-        return {
-            "type": "FeatureCollection",
-            "features": features
-        }
+                })
+        return {"type": "FeatureCollection", "features": features}
 
     def _build_countries_geojson(self):
-        """
-        Construye el GeoJSON de países usando countries con lat/lon
-        """
         countries = Country.objects.all()
-
         features = []
         for country in countries:
-            # Solo incluir si tiene coordenadas
-            # ✅ CORRECCIÓN: Convertir Decimal a float
             if country.lon is not None and country.lat is not None:
-                feature = {
+                features.append({
                     "type": "Feature",
-                    "properties": {
-                        "country": country.country  # ✅ Ya es el campo primary key (string)
-                    },
+                    "properties": {"country": country.country},
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [
-                            float(country.lon),  # ✅ Convertir Decimal a float
-                            float(country.lat)   # ✅ Convertir Decimal a float
-                        ]
+                        "coordinates": [float(country.lon), float(country.lat)]
                     }
-                }
-                features.append(feature)
-
-        return {
-            "type": "FeatureCollection",
-            "features": features
-        }
+                })
+        return {"type": "FeatureCollection", "features": features}
