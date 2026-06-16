@@ -142,7 +142,7 @@ EVENTS_DATA = [
     ),
     (
         'may-20', 2020, 'Document',
-        '-', '-',
+        'Online', 'Online',
         'Actual version FELA'
     ),
     (

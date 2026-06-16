@@ -1,0 +1,181 @@
+;
+; Archive created at 2026-06-16 19:22:01 UTC
+;     dbname: FELA
+;     TOC Entries: 171
+;     Compression: gzip
+;     Dump Version: 1.15-0
+;     Format: CUSTOM
+;     Integer: 4 bytes
+;     Offset: 8 bytes
+;     Dumped from database version: 16.4 (Debian 16.4-1.pgdg110+2)
+;     Dumped by pg_dump version: 16.4 (Debian 16.4-1.pgdg110+2)
+;
+;
+; Selected TOC Entries:
+;
+8; 2615 19728 SCHEMA - events postgres
+;6; 2615 2200 SCHEMA - public pg_database_owner
+;4517; 0 0 COMMENT - SCHEMA public pg_database_owner
+240; 1259 19843 TABLE events agency postgres
+239; 1259 19842 SEQUENCE events agency_id_seq postgres
+254; 1259 19904 TABLE events city postgres
+253; 1259 19903 SEQUENCE events city_id_seq postgres
+242; 1259 19853 TABLE events country postgres
+241; 1259 19852 SEQUENCE events country_id_seq postgres
+244; 1259 19863 TABLE events event postgres
+246; 1259 19873 TABLE events event_agency postgres
+245; 1259 19872 SEQUENCE events event_agency_id_seq postgres
+243; 1259 19862 SEQUENCE events event_id_seq postgres
+248; 1259 19879 TABLE events presentation postgres
+247; 1259 19878 SEQUENCE events presentation_id_seq postgres
+250; 1259 19887 TABLE events presentation_speaker postgres
+249; 1259 19886 SEQUENCE events presentation_speaker_id_seq postgres
+252; 1259 19893 TABLE events speaker postgres
+251; 1259 19892 SEQUENCE events speaker_id_seq postgres
+230; 1259 19752 TABLE public auth_group postgres
+229; 1259 19751 SEQUENCE public auth_group_id_seq postgres
+232; 1259 19760 TABLE public auth_group_permissions postgres
+231; 1259 19759 SEQUENCE public auth_group_permissions_id_seq postgres
+228; 1259 19746 TABLE public auth_permission postgres
+227; 1259 19745 SEQUENCE public auth_permission_id_seq postgres
+234; 1259 19792 TABLE public core_customuser postgres
+236; 1259 19802 TABLE public core_customuser_groups postgres
+235; 1259 19801 SEQUENCE public core_customuser_groups_id_seq postgres
+233; 1259 19791 SEQUENCE public core_customuser_id_seq postgres
+238; 1259 19808 TABLE public core_customuser_user_permissions postgres
+237; 1259 19807 SEQUENCE public core_customuser_user_permissions_id_seq postgres
+256; 1259 20022 TABLE public django_admin_log postgres
+255; 1259 20021 SEQUENCE public django_admin_log_id_seq postgres
+226; 1259 19738 TABLE public django_content_type postgres
+225; 1259 19737 SEQUENCE public django_content_type_id_seq postgres
+224; 1259 19730 TABLE public django_migrations postgres
+223; 1259 19729 SEQUENCE public django_migrations_id_seq postgres
+257; 1259 20042 TABLE public django_session postgres
+4492; 0 19843 TABLE DATA events agency postgres
+4506; 0 19904 TABLE DATA events city postgres
+4494; 0 19853 TABLE DATA events country postgres
+4496; 0 19863 TABLE DATA events event postgres
+4498; 0 19873 TABLE DATA events event_agency postgres
+4500; 0 19879 TABLE DATA events presentation postgres
+4502; 0 19887 TABLE DATA events presentation_speaker postgres
+4504; 0 19893 TABLE DATA events speaker postgres
+4482; 0 19752 TABLE DATA public auth_group postgres
+4484; 0 19760 TABLE DATA public auth_group_permissions postgres
+4480; 0 19746 TABLE DATA public auth_permission postgres
+4486; 0 19792 TABLE DATA public core_customuser postgres
+4488; 0 19802 TABLE DATA public core_customuser_groups postgres
+4490; 0 19808 TABLE DATA public core_customuser_user_permissions postgres
+4508; 0 20022 TABLE DATA public django_admin_log postgres
+4478; 0 19738 TABLE DATA public django_content_type postgres
+4476; 0 19730 TABLE DATA public django_migrations postgres
+4509; 0 20042 TABLE DATA public django_session postgres
+4518; 0 0 SEQUENCE SET events agency_id_seq postgres
+4519; 0 0 SEQUENCE SET events city_id_seq postgres
+4520; 0 0 SEQUENCE SET events country_id_seq postgres
+4521; 0 0 SEQUENCE SET events event_agency_id_seq postgres
+4522; 0 0 SEQUENCE SET events event_id_seq postgres
+4523; 0 0 SEQUENCE SET events presentation_id_seq postgres
+4524; 0 0 SEQUENCE SET events presentation_speaker_id_seq postgres
+4525; 0 0 SEQUENCE SET events speaker_id_seq postgres
+4526; 0 0 SEQUENCE SET public auth_group_id_seq postgres
+4527; 0 0 SEQUENCE SET public auth_group_permissions_id_seq postgres
+4528; 0 0 SEQUENCE SET public auth_permission_id_seq postgres
+4529; 0 0 SEQUENCE SET public core_customuser_groups_id_seq postgres
+4530; 0 0 SEQUENCE SET public core_customuser_id_seq postgres
+4531; 0 0 SEQUENCE SET public core_customuser_user_permissions_id_seq postgres
+4532; 0 0 SEQUENCE SET public django_admin_log_id_seq postgres
+4533; 0 0 SEQUENCE SET public django_content_type_id_seq postgres
+4534; 0 0 SEQUENCE SET public django_migrations_id_seq postgres
+4244; 2606 19851 CONSTRAINT events agency agency_name_key postgres
+4246; 2606 19849 CONSTRAINT events agency agency_pkey postgres
+4287; 2606 20007 CONSTRAINT events city city_country_id_city_20727fad_uniq postgres
+4292; 2606 19910 CONSTRAINT events city city_pkey postgres
+4249; 2606 19861 CONSTRAINT events country country_country_key postgres
+4253; 2606 19859 CONSTRAINT events country country_pkey postgres
+4265; 2606 19942 CONSTRAINT events event_agency event_agency_event_id_agency_id_4a67b6da_uniq postgres
+4267; 2606 19877 CONSTRAINT events event_agency event_agency_pkey postgres
+4258; 2606 19871 CONSTRAINT events event event_event_title_key postgres
+4260; 2606 19869 CONSTRAINT events event event_pkey postgres
+4271; 2606 19885 CONSTRAINT events presentation presentation_pkey postgres
+4274; 2606 19891 CONSTRAINT events presentation_speaker presentation_speaker_pkey postgres
+4277; 2606 19912 CONSTRAINT events presentation_speaker presentation_speaker_presentation_id_speaker_id_66d300ea_uniq postgres
+4283; 2606 19986 CONSTRAINT events speaker speaker_name_country_id_7607428b_uniq postgres
+4285; 2606 19897 CONSTRAINT events speaker speaker_pkey postgres
+4215; 2606 19789 CONSTRAINT public auth_group auth_group_name_key postgres
+4220; 2606 19775 CONSTRAINT public auth_group_permissions auth_group_permissions_group_id_permission_id_0cd325b0_uniq postgres
+4223; 2606 19764 CONSTRAINT public auth_group_permissions auth_group_permissions_pkey postgres
+4217; 2606 19756 CONSTRAINT public auth_group auth_group_pkey postgres
+4210; 2606 19766 CONSTRAINT public auth_permission auth_permission_content_type_id_codename_01ab375a_uniq postgres
+4212; 2606 19750 CONSTRAINT public auth_permission auth_permission_pkey postgres
+4231; 2606 19815 CONSTRAINT public core_customuser_groups core_customuser_groups_customuser_id_group_id_7990e9c6_uniq postgres
+4234; 2606 19806 CONSTRAINT public core_customuser_groups core_customuser_groups_pkey postgres
+4225; 2606 19798 CONSTRAINT public core_customuser core_customuser_pkey postgres
+4236; 2606 19829 CONSTRAINT public core_customuser_user_permissions core_customuser_user_per_customuser_id_permission_49ea742a_uniq postgres
+4240; 2606 19812 CONSTRAINT public core_customuser_user_permissions core_customuser_user_permissions_pkey postgres
+4228; 2606 19800 CONSTRAINT public core_customuser core_customuser_username_key postgres
+4295; 2606 20029 CONSTRAINT public django_admin_log django_admin_log_pkey postgres
+4205; 2606 19744 CONSTRAINT public django_content_type django_content_type_app_label_model_76bd3d3b_uniq postgres
+4207; 2606 19742 CONSTRAINT public django_content_type django_content_type_pkey postgres
+4203; 2606 19736 CONSTRAINT public django_migrations django_migrations_pkey postgres
+4299; 2606 20048 CONSTRAINT public django_session django_session_pkey postgres
+4241; 1259 19919 INDEX events agency_created_by_id_bfcc5f55 postgres
+4242; 1259 19918 INDEX events agency_name_b984727b_like postgres
+4288; 1259 20020 INDEX events city_country_id_ec9de532 postgres
+4289; 1259 20019 INDEX events city_created_by_id_14c48df7 postgres
+4290; 1259 20018 INDEX events city_geom_8cf63080_id postgres
+4247; 1259 19925 INDEX events country_country_d3fce434_like postgres
+4250; 1259 19927 INDEX events country_created_by_id_801ec042 postgres
+4251; 1259 19926 INDEX events country_geom_54c3fcc0_id postgres
+4261; 1259 19958 INDEX events event_agency_agency_id_0ba38470 postgres
+4262; 1259 19959 INDEX events event_agency_created_by_id_1d25111b postgres
+4263; 1259 19960 INDEX events event_agency_event_id_1f13d6d1 postgres
+4254; 1259 19939 INDEX events event_country_id_65c3a991 postgres
+4255; 1259 19940 INDEX events event_created_by_id_108e2d6d postgres
+4256; 1259 19938 INDEX events event_event_title_e043333e_like postgres
+4268; 1259 19971 INDEX events presentation_created_by_id_c07f23b3 postgres
+4269; 1259 19972 INDEX events presentation_event_id_6faa7a08 postgres
+4272; 1259 19983 INDEX events presentation_speaker_created_by_id_a22421c8 postgres
+4275; 1259 19984 INDEX events presentation_speaker_presentation_id_d9100004 postgres
+4278; 1259 20005 INDEX events presentation_speaker_speaker_id_66cfad78 postgres
+4279; 1259 20002 INDEX events speaker_agency_id_69575c91 postgres
+4280; 1259 20003 INDEX events speaker_country_id_7877e4ea postgres
+4281; 1259 20004 INDEX events speaker_created_by_id_25efabd6 postgres
+4213; 1259 19790 INDEX public auth_group_name_a6ea08ec_like postgres
+4218; 1259 19786 INDEX public auth_group_permissions_group_id_b120cbf9 postgres
+4221; 1259 19787 INDEX public auth_group_permissions_permission_id_84c5c92e postgres
+4208; 1259 19772 INDEX public auth_permission_content_type_id_2f476e4b postgres
+4229; 1259 19826 INDEX public core_customuser_groups_customuser_id_976bc4d7 postgres
+4232; 1259 19827 INDEX public core_customuser_groups_group_id_301aeff4 postgres
+4237; 1259 19840 INDEX public core_customuser_user_permissions_customuser_id_ebd2ce6c postgres
+4238; 1259 19841 INDEX public core_customuser_user_permissions_permission_id_80ceaab9 postgres
+4226; 1259 19813 INDEX public core_customuser_username_0e60666f_like postgres
+4293; 1259 20040 INDEX public django_admin_log_content_type_id_c4bce8eb postgres
+4296; 1259 20041 INDEX public django_admin_log_user_id_c564eba6 postgres
+4297; 1259 20050 INDEX public django_session_expire_date_a5c62663 postgres
+4300; 1259 20049 INDEX public django_session_session_key_c0390e0f_like postgres
+4308; 2606 19913 FK CONSTRAINT events agency agency_created_by_id_bfcc5f55_fk_core_customuser_id postgres
+4323; 2606 20013 FK CONSTRAINT events city city_country_id_ec9de532_fk_country_id postgres
+4324; 2606 20008 FK CONSTRAINT events city city_created_by_id_14c48df7_fk_core_customuser_id postgres
+4309; 2606 19920 FK CONSTRAINT events country country_created_by_id_801ec042_fk_core_customuser_id postgres
+4312; 2606 19943 FK CONSTRAINT events event_agency event_agency_agency_id_0ba38470_fk_agency_id postgres
+4313; 2606 19948 FK CONSTRAINT events event_agency event_agency_created_by_id_1d25111b_fk_core_customuser_id postgres
+4314; 2606 19953 FK CONSTRAINT events event_agency event_agency_event_id_1f13d6d1_fk_event_id postgres
+4310; 2606 19928 FK CONSTRAINT events event event_country_id_65c3a991_fk_country_id postgres
+4311; 2606 19933 FK CONSTRAINT events event event_created_by_id_108e2d6d_fk_core_customuser_id postgres
+4315; 2606 19961 FK CONSTRAINT events presentation presentation_created_by_id_c07f23b3_fk_core_customuser_id postgres
+4316; 2606 19966 FK CONSTRAINT events presentation presentation_event_id_6faa7a08_fk_event_id postgres
+4317; 2606 19973 FK CONSTRAINT events presentation_speaker presentation_speaker_created_by_id_a22421c8_fk_core_cust postgres
+4318; 2606 19978 FK CONSTRAINT events presentation_speaker presentation_speaker_presentation_id_d9100004_fk_presentat postgres
+4319; 2606 19898 FK CONSTRAINT events presentation_speaker presentation_speaker_speaker_id_66cfad78_fk_speaker_id postgres
+4320; 2606 19987 FK CONSTRAINT events speaker speaker_agency_id_69575c91_fk_agency_id postgres
+4321; 2606 19992 FK CONSTRAINT events speaker speaker_country_id_7877e4ea_fk_country_id postgres
+4322; 2606 19997 FK CONSTRAINT events speaker speaker_created_by_id_25efabd6_fk_core_customuser_id postgres
+4302; 2606 19781 FK CONSTRAINT public auth_group_permissions auth_group_permissio_permission_id_84c5c92e_fk_auth_perm postgres
+4303; 2606 19776 FK CONSTRAINT public auth_group_permissions auth_group_permissions_group_id_b120cbf9_fk_auth_group_id postgres
+4301; 2606 19767 FK CONSTRAINT public auth_permission auth_permission_content_type_id_2f476e4b_fk_django_co postgres
+4304; 2606 19816 FK CONSTRAINT public core_customuser_groups core_customuser_grou_customuser_id_976bc4d7_fk_core_cust postgres
+4305; 2606 19821 FK CONSTRAINT public core_customuser_groups core_customuser_groups_group_id_301aeff4_fk_auth_group_id postgres
+4306; 2606 19830 FK CONSTRAINT public core_customuser_user_permissions core_customuser_user_customuser_id_ebd2ce6c_fk_core_cust postgres
+4307; 2606 19835 FK CONSTRAINT public core_customuser_user_permissions core_customuser_user_permission_id_80ceaab9_fk_auth_perm postgres
+4325; 2606 20030 FK CONSTRAINT public django_admin_log django_admin_log_content_type_id_c4bce8eb_fk_django_co postgres
+4326; 2606 20035 FK CONSTRAINT public django_admin_log django_admin_log_user_id_c564eba6_fk_core_customuser_id postgres

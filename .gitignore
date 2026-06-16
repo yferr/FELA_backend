@@ -101,6 +101,11 @@ migrations/*
 #keep the __init__.py files in the migration folders
 !migrations/__init__.py
 !**/migrations/__init__.py
+#FELA and core migrations ARE version-controlled: initdb.sh no longer wipes
+#django_migrations and regenerates them on every run, so they need to stay
+#in git for schema state to be reproducible across deployments.
+!djangoapi/FELA/migrations/*.py
+!djangoapi/core/migrations/*.py
 
 djangoapi/.dotnet
 djangoapi/.vscode-server

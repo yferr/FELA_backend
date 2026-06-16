@@ -3,32 +3,25 @@ set -e
 
 # Wait for PostgreSQL to be ready
 until pg_isready; do
-  echo ${POSTGRES_USER}
   echo "Waiting for PostgreSQL to start..."
   sleep 2
 done
 
-echo "PostgreSQL is ready. Starting restore."
-
-#psql -U ${POSTGRES_USER} -d ${POSTGRES_DB} -c "create extension if not exists postgis"
+echo "PostgreSQL is ready. Restoring FELA seed data."
 
 ### RESTORE THE DATABASE
-#To restore a databse follow the following steps.
-#If no database restore, the database will be empty
+# fela_seed.dump is a pg_dump custom-format dump of the 'events' schema and
+# the Django/auth tables in 'public' (see postgis/Dockerfile). It was
+# produced with --no-owner, so objects are restored as ${POSTGRES_USER}
+# (the role the base image already created from env vars) — no extra role
+# needs to be created first. If you ever restore a dump that references a
+# foreign owner, create that role first (see init-users.sql for the pattern)
+# and drop --no-owner below.
+#
+# fela_seed.list filters out the dump's "public" schema entry, since a
+# fresh cluster already has one (restoring it again is a harmless but fatal
+# error under `set -e`).
+pg_restore -v --no-owner --use-list=/usr/local/app/fela_seed.list \
+    -U "${POSTGRES_USER}" -d "${POSTGRES_DB}" /usr/local/app/fela_seed.dump
 
-### ADDITIONAL USERS CREATION
-#To restore a database firts you have to create the users that own the objects.
-# - Put, in the file init-users.sql, the necessary sql sentences to create the users.
-# - Uncomment the followign two lines.
-
-#echo "Creating the user vagrant."
-#psql -U ${POSTGRES_USER} -d ${POSTGRES_DB} < /usr/local/app/init-users.sql
-
-### RESTORE THE DATABASE
-#Create a custom backup file and put it here.
-#Uncomment the following line and change the filename to restore
-
-#pg_restore -v -U ${POSTGRES_USER} -d ${POSTGRES_DB} /usr/local/app/disati.backup
-#echo "Database restore completed."
-
-echo "Database cluster created."
+echo "FELA seed data restored."

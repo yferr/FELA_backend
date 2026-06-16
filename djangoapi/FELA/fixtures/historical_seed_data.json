@@ -1,0 +1,4856 @@
+[
+{
+  "model": "FELA.country",
+  "pk": 1,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.758Z",
+    "updated_at": "2026-06-16T18:02:19.758Z",
+    "country": "Morocco",
+    "geom": null,
+    "lat": "34.0209000",
+    "lon": "-6.8416000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 2,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.771Z",
+    "updated_at": "2026-06-16T18:02:19.771Z",
+    "country": "Malaysia",
+    "geom": null,
+    "lat": "1.5533000",
+    "lon": "110.3592000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 3,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.780Z",
+    "updated_at": "2026-06-16T18:02:19.780Z",
+    "country": "Belgium",
+    "geom": null,
+    "lat": "51.2088900",
+    "lon": "3.2241700"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 4,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.787Z",
+    "updated_at": "2026-06-16T18:02:19.787Z",
+    "country": "Ghana",
+    "geom": null,
+    "lat": "5.6148180",
+    "lon": "-0.2058740"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 5,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.796Z",
+    "updated_at": "2026-06-16T18:02:19.796Z",
+    "country": "Mexico",
+    "geom": null,
+    "lat": "21.8853000",
+    "lon": "-102.2916000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 6,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.806Z",
+    "updated_at": "2026-06-16T18:02:19.806Z",
+    "country": "Nepal",
+    "geom": null,
+    "lat": "27.6226000",
+    "lon": "85.5423000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 7,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.812Z",
+    "updated_at": "2026-06-16T18:02:19.812Z",
+    "country": "Chile",
+    "geom": null,
+    "lat": "-33.4489000",
+    "lon": "-70.6693000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 8,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.819Z",
+    "updated_at": "2026-06-16T18:02:19.819Z",
+    "country": "USA",
+    "geom": null,
+    "lat": "39.8283000",
+    "lon": "-98.5795000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 9,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.829Z",
+    "updated_at": "2026-06-16T18:02:19.829Z",
+    "country": "Poland",
+    "geom": null,
+    "lat": "52.2297000",
+    "lon": "21.0122000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 10,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.835Z",
+    "updated_at": "2026-06-16T18:02:19.835Z",
+    "country": "the Netherlands",
+    "geom": null,
+    "lat": "52.3675730",
+    "lon": "4.9041390"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 11,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.843Z",
+    "updated_at": "2026-06-16T18:02:19.843Z",
+    "country": "Singapore",
+    "geom": null,
+    "lat": "1.3521000",
+    "lon": "103.8198000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 12,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.854Z",
+    "updated_at": "2026-06-16T18:02:19.854Z",
+    "country": "Australia",
+    "geom": null,
+    "lat": "-25.2744000",
+    "lon": "133.7751000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 13,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.862Z",
+    "updated_at": "2026-06-16T18:02:19.862Z",
+    "country": "France",
+    "geom": null,
+    "lat": "46.6034000",
+    "lon": "1.8883000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 14,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.868Z",
+    "updated_at": "2026-06-16T18:02:19.868Z",
+    "country": "Spain",
+    "geom": null,
+    "lat": "40.4637000",
+    "lon": "-3.7492000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 15,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.883Z",
+    "updated_at": "2026-06-16T18:02:19.883Z",
+    "country": "Argentina",
+    "geom": null,
+    "lat": "-34.0000000",
+    "lon": "-64.0000000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 16,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.892Z",
+    "updated_at": "2026-06-16T18:02:19.892Z",
+    "country": "Germany",
+    "geom": null,
+    "lat": "51.1657000",
+    "lon": "10.4515000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 17,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.902Z",
+    "updated_at": "2026-06-16T18:02:19.902Z",
+    "country": "Nigeria",
+    "geom": null,
+    "lat": "9.0820000",
+    "lon": "8.6753000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 18,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.907Z",
+    "updated_at": "2026-06-16T18:02:19.907Z",
+    "country": "Sweden",
+    "geom": null,
+    "lat": "60.1282000",
+    "lon": "18.6435000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 19,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.915Z",
+    "updated_at": "2026-06-16T18:02:19.915Z",
+    "country": "Finland",
+    "geom": null,
+    "lat": "64.0000000",
+    "lon": "26.0000000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 20,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.922Z",
+    "updated_at": "2026-06-16T18:02:19.922Z",
+    "country": "Democratic Republic of Congo",
+    "geom": null,
+    "lat": "-4.0383000",
+    "lon": "21.7587000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 21,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.934Z",
+    "updated_at": "2026-06-16T18:02:19.934Z",
+    "country": "Kenya",
+    "geom": null,
+    "lat": "-1.2921000",
+    "lon": "36.8219000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 22,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.944Z",
+    "updated_at": "2026-06-16T18:02:19.944Z",
+    "country": "Barbados",
+    "geom": null,
+    "lat": "13.1939000",
+    "lon": "-59.5432000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 23,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.951Z",
+    "updated_at": "2026-06-16T18:02:19.951Z",
+    "country": "Republica Dominicana",
+    "geom": null,
+    "lat": "18.7357000",
+    "lon": "-70.1627000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 24,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.956Z",
+    "updated_at": "2026-06-16T18:02:19.956Z",
+    "country": "Trinidad And Tobago",
+    "geom": null,
+    "lat": "10.6918000",
+    "lon": "-61.2225000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 25,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.961Z",
+    "updated_at": "2026-06-16T18:02:19.961Z",
+    "country": "Chad",
+    "geom": null,
+    "lat": "15.4542000",
+    "lon": "18.7322000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 26,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.968Z",
+    "updated_at": "2026-06-16T18:02:19.968Z",
+    "country": "Rwanda",
+    "geom": null,
+    "lat": "-1.9403000",
+    "lon": "29.8739000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 27,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.975Z",
+    "updated_at": "2026-06-16T18:02:19.975Z",
+    "country": "Egypt",
+    "geom": null,
+    "lat": "26.8206000",
+    "lon": "30.8025000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 28,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.983Z",
+    "updated_at": "2026-06-16T18:02:19.983Z",
+    "country": "Armenia",
+    "geom": null,
+    "lat": "40.0691000",
+    "lon": "45.0382000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 29,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:19.995Z",
+    "updated_at": "2026-06-16T18:02:19.995Z",
+    "country": "Indonesia",
+    "geom": null,
+    "lat": "-0.7893000",
+    "lon": "113.9213000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 30,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:20.004Z",
+    "updated_at": "2026-06-16T18:02:20.004Z",
+    "country": "Fiji",
+    "geom": null,
+    "lat": "-17.7134000",
+    "lon": "178.0650000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 31,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:20.010Z",
+    "updated_at": "2026-06-16T18:02:20.010Z",
+    "country": "Sri Lanka",
+    "geom": null,
+    "lat": "7.8731000",
+    "lon": "80.7718000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 32,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:20.021Z",
+    "updated_at": "2026-06-16T18:02:20.021Z",
+    "country": "Kingdom of Saudi Arabia",
+    "geom": null,
+    "lat": "23.8859000",
+    "lon": "45.0792000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 33,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:20.028Z",
+    "updated_at": "2026-06-16T18:02:20.028Z",
+    "country": "China",
+    "geom": null,
+    "lat": "35.8617000",
+    "lon": "103.0000000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 34,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:20.034Z",
+    "updated_at": "2026-06-16T18:02:20.034Z",
+    "country": "United Kingdom",
+    "geom": null,
+    "lat": "55.3781000",
+    "lon": "-3.4360000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 35,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:20.039Z",
+    "updated_at": "2026-06-16T18:02:20.039Z",
+    "country": "Slovenia",
+    "geom": null,
+    "lat": "46.1512000",
+    "lon": "14.9955000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 36,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:20.045Z",
+    "updated_at": "2026-06-16T18:02:20.045Z",
+    "country": "Latvia",
+    "geom": null,
+    "lat": "56.8796000",
+    "lon": "24.6032000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 37,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:20.050Z",
+    "updated_at": "2026-06-16T18:02:20.050Z",
+    "country": "Sierra Leone",
+    "geom": null,
+    "lat": "8.4606000",
+    "lon": "-11.7799000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 38,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:20.055Z",
+    "updated_at": "2026-06-16T18:02:20.055Z",
+    "country": "Brazil",
+    "geom": null,
+    "lat": "-14.2350000",
+    "lon": "-51.9253000"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 39,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:20.060Z",
+    "updated_at": "2026-06-16T18:02:20.060Z",
+    "country": "Online",
+    "geom": null,
+    "lat": "0E-7",
+    "lon": "0E-7"
+  }
+},
+{
+  "model": "FELA.country",
+  "pk": 40,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:20.066Z",
+    "updated_at": "2026-06-16T18:02:20.066Z",
+    "country": "-",
+    "geom": null,
+    "lat": "0E-7",
+    "lon": "0E-7"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 1,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.399Z",
+    "updated_at": "2026-06-16T18:02:22.399Z",
+    "country": 1,
+    "city": "Rabat",
+    "geom": null,
+    "lat": "34.0209000",
+    "lon": "-6.8416000"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 2,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.411Z",
+    "updated_at": "2026-06-16T18:02:22.411Z",
+    "country": 38,
+    "city": "Florianópolis",
+    "geom": null,
+    "lat": "-27.5935000",
+    "lon": "-48.5585400"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 3,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.419Z",
+    "updated_at": "2026-06-16T18:02:22.419Z",
+    "country": 2,
+    "city": "Sarawak",
+    "geom": null,
+    "lat": "1.5533000",
+    "lon": "110.3592000"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 4,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.428Z",
+    "updated_at": "2026-06-16T18:02:22.428Z",
+    "country": 3,
+    "city": "Brujes",
+    "geom": null,
+    "lat": "51.2088900",
+    "lon": "3.2241700"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 5,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.435Z",
+    "updated_at": "2026-06-16T18:02:22.435Z",
+    "country": 4,
+    "city": "Accra",
+    "geom": null,
+    "lat": "5.6148180",
+    "lon": "-0.2058740"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 6,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.444Z",
+    "updated_at": "2026-06-16T18:02:22.444Z",
+    "country": 5,
+    "city": "Aguascalientes",
+    "geom": null,
+    "lat": "21.8853000",
+    "lon": "-102.2916000"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 7,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.455Z",
+    "updated_at": "2026-06-16T18:02:22.455Z",
+    "country": 6,
+    "city": "Dhulikhel",
+    "geom": null,
+    "lat": "27.6226000",
+    "lon": "85.5423000"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 8,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.464Z",
+    "updated_at": "2026-06-16T18:02:22.464Z",
+    "country": 7,
+    "city": "Santiago de Chile",
+    "geom": null,
+    "lat": "-33.4489000",
+    "lon": "-70.6693000"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 9,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.472Z",
+    "updated_at": "2026-06-16T18:02:22.472Z",
+    "country": 8,
+    "city": "Orlando",
+    "geom": null,
+    "lat": "28.5383000",
+    "lon": "-81.3792000"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 10,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.481Z",
+    "updated_at": "2026-06-16T18:02:22.481Z",
+    "country": 8,
+    "city": "New York",
+    "geom": null,
+    "lat": "40.7127760",
+    "lon": "-74.0059740"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 11,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.492Z",
+    "updated_at": "2026-06-16T18:02:22.492Z",
+    "country": 9,
+    "city": "Warsaw",
+    "geom": null,
+    "lat": "52.2297000",
+    "lon": "21.0122000"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 12,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.498Z",
+    "updated_at": "2026-06-16T18:02:22.498Z",
+    "country": 10,
+    "city": "Amsterdam",
+    "geom": null,
+    "lat": "52.3675730",
+    "lon": "4.9041390"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 13,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.505Z",
+    "updated_at": "2026-06-16T18:02:22.505Z",
+    "country": 10,
+    "city": "Deventer",
+    "geom": null,
+    "lat": "52.2550000",
+    "lon": "6.1639000"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 14,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.519Z",
+    "updated_at": "2026-06-16T18:02:22.519Z",
+    "country": 11,
+    "city": "Singapore",
+    "geom": null,
+    "lat": "1.3521000",
+    "lon": "103.8198000"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 15,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.529Z",
+    "updated_at": "2026-06-16T18:02:22.529Z",
+    "country": 12,
+    "city": "Canberra",
+    "geom": null,
+    "lat": "-35.2809000",
+    "lon": "149.1300000"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 16,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.537Z",
+    "updated_at": "2026-06-16T18:02:22.537Z",
+    "country": 13,
+    "city": "Paris",
+    "geom": null,
+    "lat": "46.6034000",
+    "lon": "1.8883000"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 17,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.545Z",
+    "updated_at": "2026-06-16T18:02:22.545Z",
+    "country": 14,
+    "city": "Madrid",
+    "geom": null,
+    "lat": "40.4637000",
+    "lon": "-3.7492000"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 18,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.555Z",
+    "updated_at": "2026-06-16T18:02:22.555Z",
+    "country": 21,
+    "city": "Nairobi",
+    "geom": null,
+    "lat": "-1.2921000",
+    "lon": "36.8219000"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 19,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.566Z",
+    "updated_at": "2026-06-16T18:02:22.566Z",
+    "country": 39,
+    "city": "Online",
+    "geom": null,
+    "lat": "0E-7",
+    "lon": "0E-7"
+  }
+},
+{
+  "model": "FELA.city",
+  "pk": 20,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:22.574Z",
+    "updated_at": "2026-06-16T18:02:22.574Z",
+    "country": 40,
+    "city": "-",
+    "geom": null,
+    "lat": "0E-7",
+    "lon": "0E-7"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 1,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.604Z",
+    "updated_at": "2026-06-16T18:02:25.604Z",
+    "name": "FIG",
+    "long_name": "Fédération Internationale des Géomètres"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 2,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.620Z",
+    "updated_at": "2026-06-16T18:02:25.620Z",
+    "name": "Un-GGIM (EG-LAM)",
+    "long_name": "United Nations Global Geospatial Information Management (Group of Experts on Land Administration and Management)"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 3,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.632Z",
+    "updated_at": "2026-06-16T18:02:25.632Z",
+    "name": "EuroSDR",
+    "long_name": "European Spatial Data Research"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 4,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.644Z",
+    "updated_at": "2026-06-16T18:02:25.644Z",
+    "name": "IGN France",
+    "long_name": "Institut National de l'Information Géographique et Forestière"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 5,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.657Z",
+    "updated_at": "2026-06-16T18:02:25.657Z",
+    "name": "UN-GGIM Europe",
+    "long_name": "Europe Regional Committee of the United Nations Committee on Global Geospatial Information Management"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 6,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.666Z",
+    "updated_at": "2026-06-16T18:02:25.666Z",
+    "name": "EuroGeographics",
+    "long_name": null
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 7,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.678Z",
+    "updated_at": "2026-06-16T18:02:25.678Z",
+    "name": "ARA-LG",
+    "long_name": "Arab Academic Network for Land Governance"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 8,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.686Z",
+    "updated_at": "2026-06-16T18:02:25.686Z",
+    "name": "Arab Land Initiative",
+    "long_name": null
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 9,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.694Z",
+    "updated_at": "2026-06-16T18:02:25.694Z",
+    "name": "SLAS",
+    "long_name": "School for Land Administration Studies"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 10,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.700Z",
+    "updated_at": "2026-06-16T18:02:25.700Z",
+    "name": "Kadaster",
+    "long_name": "The Netherlands' Cadastre, Land Registry and Mapping Agency"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 11,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.705Z",
+    "updated_at": "2026-06-16T18:02:25.705Z",
+    "name": "ITC Faculty University of Twente",
+    "long_name": "Faculty of Geo-information Sciences and Earth Observation at the University of Twente"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 12,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.716Z",
+    "updated_at": "2026-06-16T18:02:25.716Z",
+    "name": "School of Geomatic Sciences and Land Survey Engineering at Institut Agronomique et Vétérinaire Hassan II",
+    "long_name": null
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 13,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.724Z",
+    "updated_at": "2026-06-16T18:02:25.724Z",
+    "name": "UFSC",
+    "long_name": "Universidade Federal de Santa Catarina"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 14,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.733Z",
+    "updated_at": "2026-06-16T18:02:25.733Z",
+    "name": "PCC",
+    "long_name": "Permanent Committee on Cadastre in the European Union"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 15,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.741Z",
+    "updated_at": "2026-06-16T18:02:25.742Z",
+    "name": "CLRKEN EuroGeographics",
+    "long_name": "EuroGeographics Cadastre and Land Registry Knowledge Exchange Network"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 16,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.755Z",
+    "updated_at": "2026-06-16T18:02:25.755Z",
+    "name": "UN-GGIM",
+    "long_name": "United Nations Global Geospatial Information Management"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 17,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.786Z",
+    "updated_at": "2026-06-16T18:02:25.786Z",
+    "name": "CPCI",
+    "long_name": "Comité Permanente del Catastro en Iberoamérica"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 18,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.823Z",
+    "updated_at": "2026-06-16T18:02:25.823Z",
+    "name": "GLTN",
+    "long_name": "Global Land Tool Network"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 19,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.842Z",
+    "updated_at": "2026-06-16T18:02:25.842Z",
+    "name": "Land Management Training Center of Government of Nepal",
+    "long_name": null
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 20,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.869Z",
+    "updated_at": "2026-06-16T18:02:25.869Z",
+    "name": "UN-Habitat",
+    "long_name": "United Nations Human Settlements Programme"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 21,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.933Z",
+    "updated_at": "2026-06-16T18:02:25.933Z",
+    "name": "Kadaster International",
+    "long_name": null
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 22,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.957Z",
+    "updated_at": "2026-06-16T18:02:25.957Z",
+    "name": "UN-GGIM Américas",
+    "long_name": "United Nations Regional Committee on Global Geospatial Information Management for the Americas"
+  }
+},
+{
+  "model": "FELA.agency",
+  "pk": 23,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:25.976Z",
+    "updated_at": "2026-06-16T18:02:25.976Z",
+    "name": "Geospatial World",
+    "long_name": null
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 1,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.479Z",
+    "updated_at": "2026-06-16T18:02:29.479Z",
+    "date": "3-5 november 2025",
+    "year": 2025,
+    "type": "Conference",
+    "country": 38,
+    "city": "Florianópolis",
+    "event_title": "FIG Joint Land Administration Conference"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 2,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.493Z",
+    "updated_at": "2026-06-16T18:02:29.493Z",
+    "date": "17 july 2025",
+    "year": 2025,
+    "type": "Webinar",
+    "country": 39,
+    "city": "Online",
+    "event_title": "Unlocking FELA a global dialogue on land administration "
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 3,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.504Z",
+    "updated_at": "2026-06-16T18:02:29.504Z",
+    "date": "16-17 June 2025",
+    "year": 2025,
+    "type": "Workshop",
+    "country": 13,
+    "city": "Paris",
+    "event_title": "International Workshop on challenges in relation to the UN Framework for Effective Land Administration (FELA)"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 4,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.520Z",
+    "updated_at": "2026-06-16T18:02:29.520Z",
+    "date": "30 April 2025, 20 May 2025",
+    "year": 2025,
+    "type": "Lectures",
+    "country": 39,
+    "city": "Online",
+    "event_title": "Strengthening Academic Foundations in Land Governance: Online Lectures Hosted in Collaboration with Al-Quds and Duhok Universities"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 5,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.537Z",
+    "updated_at": "2026-06-16T18:02:29.537Z",
+    "date": "17 February 2025",
+    "year": 2025,
+    "type": "pre-workshop",
+    "country": 1,
+    "city": "Rabat",
+    "event_title": "Technical pre-workshop 3rd Arab Land Conference \"Fit-for-Purpose Land Administration in the Arab Region\""
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 6,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.553Z",
+    "updated_at": "2026-06-16T18:02:29.553Z",
+    "date": "11-13 November 2024",
+    "year": 2024,
+    "type": "Congress",
+    "country": 38,
+    "city": "Florianópolis",
+    "event_title": "Congress of Multifinalial Cadastre and Territorial Management – COBRAC 2024"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 7,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.572Z",
+    "updated_at": "2026-06-16T18:02:29.572Z",
+    "date": "24-26 September 2024",
+    "year": 2024,
+    "type": "ANNUAL MEETING",
+    "country": 2,
+    "city": "Sarawak",
+    "event_title": "FIG COMMISSION 5, 7 ANNUAL MEETING 2024 Framework for Effective Land Administration (WG7.1 FELA) + Fit for Purpose Land Administration (WG7.2 FFPLA)"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 8,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.595Z",
+    "updated_at": "2026-06-16T18:02:29.595Z",
+    "date": "17-19 June 2024",
+    "year": 2024,
+    "type": "Conference",
+    "country": 3,
+    "city": "Brujes",
+    "event_title": "Permanent Committee on Cadastre in the European Union (PCC)"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 9,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.634Z",
+    "updated_at": "2026-06-16T18:02:29.634Z",
+    "date": "19-24 May 2024",
+    "year": 2024,
+    "type": "Congress",
+    "country": 4,
+    "city": "Accra",
+    "event_title": "FIG Woorking Week 2024 - Land Policy Issues and Innovations"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 10,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.652Z",
+    "updated_at": "2026-06-16T18:02:29.652Z",
+    "date": "8-11 April 2024",
+    "year": 2024,
+    "type": "Seminar",
+    "country": 5,
+    "city": "Aguascalientes",
+    "event_title": "Fifth meeting of the Expert Group on Land Administration and Management and the International Seminar on UN-GGIM"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 11,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.667Z",
+    "updated_at": "2026-06-16T18:02:29.667Z",
+    "date": "27-29 February 2024",
+    "year": 2024,
+    "type": "Workshop",
+    "country": 6,
+    "city": "Dhulikhel",
+    "event_title": "Effective Land Administration in Nepal: Navigating Governance, Legal, and Financial Pathways within the Climate Change – Land Nexus"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 12,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.679Z",
+    "updated_at": "2026-06-16T18:02:29.679Z",
+    "date": "4-7 December 2023",
+    "year": 2023,
+    "type": "Assembly",
+    "country": 7,
+    "city": "Santiago de Chile",
+    "event_title": "XIV Simposio y IX Asamblea del CPCI"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 13,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.700Z",
+    "updated_at": "2026-06-16T18:02:29.700Z",
+    "date": "18-20 october 2023",
+    "year": 2023,
+    "type": "Expert Group Meeting",
+    "country": 7,
+    "city": "Santiago de Chile",
+    "event_title": "X session UN-GGIM : Americas "
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 14,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.745Z",
+    "updated_at": "2026-06-16T18:02:29.745Z",
+    "date": "2-4 october 2023",
+    "year": 2023,
+    "type": "Meeting",
+    "country": 10,
+    "city": "Deventer",
+    "event_title": "FIG Meeting Digital Transformation for Responsible Land Administration"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 15,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.762Z",
+    "updated_at": "2026-06-16T18:02:29.762Z",
+    "date": "28 may- 1 June 2023",
+    "year": 2023,
+    "type": "Congress",
+    "country": 8,
+    "city": "Orlando",
+    "event_title": "FIG Woorking Week 2023 - Protecting Our World, Conquering New Frontiers"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 16,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.775Z",
+    "updated_at": "2026-06-16T18:02:29.775Z",
+    "date": "11-15 September 2022",
+    "year": 2022,
+    "type": "Congress",
+    "country": 9,
+    "city": "Warsaw",
+    "event_title": "XXVII FIG Congress - Volunteering for the Future Geospatial Excellence for a better living"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 17,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.789Z",
+    "updated_at": "2026-06-16T18:02:29.789Z",
+    "date": "3-5 august  2022",
+    "year": 2022,
+    "type": "Expert Group Meeting",
+    "country": 39,
+    "city": "Online",
+    "event_title": "Twelfth Session of the United Nations Committee of Experts on Global Geospatial Information Management (UN-GGIM)"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 18,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.808Z",
+    "updated_at": "2026-06-16T18:02:29.808Z",
+    "date": "11-12 May 2022",
+    "year": 2022,
+    "type": "Seminar",
+    "country": 10,
+    "city": "Amsterdam",
+    "event_title": "Geospatial World Forum 2022, Symposium on Land Administration"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 19,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.825Z",
+    "updated_at": "2026-06-16T18:02:29.825Z",
+    "date": "17-18 May 2022",
+    "year": 2022,
+    "type": "Expert Group Meeting",
+    "country": 11,
+    "city": "Singapore",
+    "event_title": "Fourth expert meeting of the Expert Group on Land Administration and Management and International Seminar on United Nations Global Geospatial Information Management"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 20,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.841Z",
+    "updated_at": "2026-06-16T18:02:29.841Z",
+    "date": "12 August 2021",
+    "year": 2021,
+    "type": "Expert Group Meeting",
+    "country": 39,
+    "city": "Online",
+    "event_title": "Expert Group on Land Administration and Management Side Event at the Eleventh Session of the Committee of Experts on Global Geospatial Information Management"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 21,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.855Z",
+    "updated_at": "2026-06-16T18:02:29.856Z",
+    "date": "26-27 August - 4 September  2020",
+    "year": 2020,
+    "type": "Expert Group Meeting",
+    "country": 39,
+    "city": "Online",
+    "event_title": "Tenth Session of the United Nations Committee of Experts on Global Geospatial Information Management (UN-GGIM)"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 22,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.867Z",
+    "updated_at": "2026-06-16T18:02:29.867Z",
+    "date": "may-20",
+    "year": 2020,
+    "type": "Document",
+    "country": 39,
+    "city": "Online",
+    "event_title": "Actual version FELA"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 23,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.882Z",
+    "updated_at": "2026-06-16T18:02:29.882Z",
+    "date": "3-5 November 2019",
+    "year": 2019,
+    "type": "Meeting",
+    "country": 12,
+    "city": "Canberra",
+    "event_title": "Eighth Plenary Meeting of UN-GGIM-AP (Asia-Pacific)"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 24,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.894Z",
+    "updated_at": "2026-06-16T18:02:29.894Z",
+    "date": "5 - 9 August 2019",
+    "year": 2019,
+    "type": "Expert Group Meeting",
+    "country": 8,
+    "city": "New York",
+    "event_title": "Ninth Session of the United Nations Committee of Experts on Global Geospatial Information Management (UN-GGIM)"
+  }
+},
+{
+  "model": "FELA.event",
+  "pk": 25,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:29.902Z",
+    "updated_at": "2026-06-16T18:02:29.902Z",
+    "date": "2-4 August 2017",
+    "year": 2017,
+    "type": "Expert Group Meeting",
+    "country": 8,
+    "city": "New York",
+    "event_title": "Eighth Session of the United Nations Committee of Experts on Global Geospatial Information Management (UN-GGIM)"
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 1,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:37.449Z",
+    "updated_at": "2026-06-16T18:02:37.449Z",
+    "title": "Claves del éxito del catastro español y sus retos para el Furturo con relación con el FELA",
+    "event": 1,
+    "language": "[\"Español\"]",
+    "url_document": null,
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 2,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:37.516Z",
+    "updated_at": "2026-06-16T18:02:37.516Z",
+    "title": "FELA implementation experiences: Key achievement of FELA Principles in Sierra Leone",
+    "event": 2,
+    "language": "[\"Inglés\"]",
+    "url_document": null,
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 3,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:37.700Z",
+    "updated_at": "2026-06-16T18:02:37.700Z",
+    "title": "FELA implementation experiences: El estado de la administracion de tierras en Mexico, una perspectiva registral y catastral desde el FELA ",
+    "event": 2,
+    "language": "[\"Español\"]",
+    "url_document": null,
+    "observations": "Analisis basado en los resultados del Censo Nacional de Gobiernos Estatales 2025"
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 4,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:37.837Z",
+    "updated_at": "2026-06-16T18:02:37.837Z",
+    "title": "FELA implementation experiences: Towards Effective Land Administration: Lessons For and From Nigeria",
+    "event": 2,
+    "language": "[\"Inglés\"]",
+    "url_document": null,
+    "observations": "FELA progress across States in Nigeria"
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 5,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:37.918Z",
+    "updated_at": "2026-06-16T18:02:37.918Z",
+    "title": "FELA implementation experiences: de SIT a SAT Orientaciones para integrar FELa en la provincia de Córdoba, Argentina ",
+    "event": 2,
+    "language": "[\"Español\"]",
+    "url_document": null,
+    "observations": "Modernizar el SIT y mejorar la administracion territorial provincial, integrando municipios y comunas "
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 6,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:37.977Z",
+    "updated_at": "2026-06-16T18:02:37.977Z",
+    "title": "Tools for land administration: FELA implementation: French urban planning geoportal",
+    "event": 2,
+    "language": "[\"Inglés\"]",
+    "url_document": null,
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 7,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.019Z",
+    "updated_at": "2026-06-16T18:02:38.019Z",
+    "title": "Tools for land administration: UN tools to implement FELA",
+    "event": 2,
+    "language": "[\"Español\"]",
+    "url_document": null,
+    "observations": "Herramientas de las UN que pueden ser usadas para la implementacion de FELA (GLTN)"
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 8,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.047Z",
+    "updated_at": "2026-06-16T18:02:38.047Z",
+    "title": "FELA and effective land Administration ",
+    "event": 2,
+    "language": "[\"Inglés\"]",
+    "url_document": null,
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 9,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.096Z",
+    "updated_at": "2026-06-16T18:02:38.096Z",
+    "title": "UN-GGIM Expert Group on Land administration and Management",
+    "event": 3,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.eurosdr.net/sites/default/files/images/inline/eurosdr_fela_paris_keynote-presentation.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 10,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.164Z",
+    "updated_at": "2026-06-16T18:02:38.164Z",
+    "title": "Introduction to UN-GGIM Framework for Effective Land Administration (FELA)",
+    "event": 3,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.eurosdr.net/sites/default/files/images/inline/eurosdr_fela_paris_intro-to-the_fela.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 11,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.254Z",
+    "updated_at": "2026-06-16T18:02:38.254Z",
+    "title": "Results of FELA surveys",
+    "event": 3,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.eurosdr.net/sites/default/files/images/inline/eurosdr_fela_paris_survey-results.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 12,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.283Z",
+    "updated_at": "2026-06-16T18:02:38.283Z",
+    "title": "Effective land administration in the Netherlands",
+    "event": 3,
+    "language": "[\"Inglés\"]",
+    "url_document": null,
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 13,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.317Z",
+    "updated_at": "2026-06-16T18:02:38.317Z",
+    "title": "FELA implementation: French urban planning geoportal",
+    "event": 3,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.eurosdr.net/sites/default/files/images/inline/eurosdr_fela_french_urban_planning_geoportal.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 14,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.361Z",
+    "updated_at": "2026-06-16T18:02:38.361Z",
+    "title": "FELA implementation: feedback from Latvia",
+    "event": 3,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.eurosdr.net/sites/default/files/images/inline/eurosdr_fela_implementation_feedbacks-from-latvia.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 15,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.384Z",
+    "updated_at": "2026-06-16T18:02:38.384Z",
+    "title": "Making land information systems the cornerstone of FELA implementation in Africa",
+    "event": 3,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.eurosdr.net/sites/default/files/images/inline/eurosdr_fela_lis-in-africa_feedbacks-from-ignfi.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 16,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.403Z",
+    "updated_at": "2026-06-16T18:02:38.403Z",
+    "title": "Improving the usage of land administration data for education and capacity building",
+    "event": 3,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.eurosdr.net/sites/default/files/images/inline/eurosdr_fela_education-capacity-building.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 17,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.423Z",
+    "updated_at": "2026-06-16T18:02:38.423Z",
+    "title": "The use of GIS in FELA implementations",
+    "event": 3,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.eurosdr.net/sites/default/files/images/inline/eurosdr_fela_use-of-gis_esri.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 18,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.469Z",
+    "updated_at": "2026-06-16T18:02:38.469Z",
+    "title": "international frameworks and models",
+    "event": 4,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://arablandinitiative.gltn.net/media/news/strengthening-academic-foundations-in-land-governance-online-lectures-hosted-in-collaboration-with",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 19,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.494Z",
+    "updated_at": "2026-06-16T18:02:38.494Z",
+    "title": "-",
+    "event": 5,
+    "language": "[\"Inglés\", \"Arábico\"]",
+    "url_document": "https://arablandinitiative.gltn.net/media/events/technical-pre-workshop-fit-for-purpose-land-administration-in-the-arab-region",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 20,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.513Z",
+    "updated_at": "2026-06-16T18:02:38.513Z",
+    "title": "International and national frameworks that link the Multifinality Territorial Cadastre with the Sustainable Development Goals",
+    "event": 6,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://cobrac.ufsc.br/es/programacao/",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 21,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.536Z",
+    "updated_at": "2026-06-16T18:02:38.536Z",
+    "title": "Where things are at with the FELA Working group ",
+    "event": 6,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://fig.net/resources/proceedings/fig_proceedings/7_2024/papers/ts02/TS02_velasco_12940_abs.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 22,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.554Z",
+    "updated_at": "2026-06-16T18:02:38.554Z",
+    "title": "Fit-for-Purpose Land Administration Solutions from Trimble",
+    "event": 7,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://fig.net/resources/proceedings/fig_proceedings/7_2024/papers/ts02/TS02_koper_12946_abs.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 23,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.620Z",
+    "updated_at": "2026-06-16T18:02:38.620Z",
+    "title": "A prliminary UN-GGIM Work to integrate Land and Sea",
+    "event": 7,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://fig.net/resources/proceedings/fig_proceedings/7_2024/papers/ts02/TS02_soon_khoo_12866.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 24,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.698Z",
+    "updated_at": "2026-06-16T18:02:38.698Z",
+    "title": "From no Cadastre to 3D Cadastre: The evolving role of Spatially Enabled Framework",
+    "event": 7,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://fig.net/resources/proceedings/fig_proceedings/7_2024/papers/ts02/TS02_taiwo_12871_abs.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 25,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.749Z",
+    "updated_at": "2026-06-16T18:02:38.750Z",
+    "title": "Framework for Effective Land Administration (FELA)",
+    "event": 8,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://eurogeographics.org/app/uploads/2024/03/PPT-20-Magdalena-and-Amalia-Framework-for-effective-land-administration-FELA-in-PCC2024-1.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 26,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.809Z",
+    "updated_at": "2026-06-16T18:02:38.809Z",
+    "title": "Framework for Effective Land Administration (FELA): Research Synthesis",
+    "event": 9,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.fig.net/resources/proceedings/fig_proceedings/fig2024/ppt/ts11g/TS11G_unger_valesco_et_al_12697_ppt.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 27,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:38.966Z",
+    "updated_at": "2026-06-16T18:02:38.966Z",
+    "title": "Exploring Technology Integration Through FELA in Nigeria",
+    "event": 9,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.fig.net/resources/proceedings/fig_proceedings/fig2024/ppt/ts11g/TS11G_ajayi_riekkinen_et_al_12501_ppt.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 28,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.114Z",
+    "updated_at": "2026-06-16T18:02:39.114Z",
+    "title": "Land Reforms and Implementation of the Framework for Effective Land Administration (FELA): a Case Study for Customary Land Registry Implementation in the Democratic Republic of Congo",
+    "event": 9,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.fig.net/resources/proceedings/fig_proceedings/fig2024/ppt/ts11g/TS11G_mballo_vutegha_et_al_12510_ppt.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 29,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.210Z",
+    "updated_at": "2026-06-16T18:02:39.210Z",
+    "title": "Implementing the framework for effective land administration in Barbados",
+    "event": 10,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/2024/Fifth-EG-LAM/documents/2.1_Leandre_Murrel-Forde.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 30,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.265Z",
+    "updated_at": "2026-06-16T18:02:39.265Z",
+    "title": "Mexico's experiences in the implementation of FELA",
+    "event": 10,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/2024/Fifth-EG-LAM/documents/2.3_Claudio_Topete.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 31,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.346Z",
+    "updated_at": "2026-06-16T18:02:39.346Z",
+    "title": "How the implementation of the Framework for Effective Land Administration can assist cadastral institutions in Iberoamerica",
+    "event": 10,
+    "language": "[\"Inglés\", \"Español\"]",
+    "url_document": "https://ggim.un.org/meetings/2024/Fifth-EG-LAM/documents/5.1_Amalia_Velasco.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 32,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.377Z",
+    "updated_at": "2026-06-16T18:02:39.377Z",
+    "title": "Management of geospatial data and cadastral data in Chile, a pending challenge",
+    "event": 10,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/2024/Fifth-EG-LAM/documents/2.2._Raffaella_Olguin.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 33,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.456Z",
+    "updated_at": "2026-06-16T18:02:39.458Z",
+    "title": "Key Elements of the Framework for Effective Land Management",
+    "event": 10,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/2024/Fifth-EG-LAM/documents/3.1._Ridomil_Alejandro.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 34,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.478Z",
+    "updated_at": "2026-06-16T18:02:39.478Z",
+    "title": "We know the earth-we secure the future",
+    "event": 10,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/2024/Fifth-EG-LAM/documents/3.2._Markku_Markkula.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 35,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.495Z",
+    "updated_at": "2026-06-16T18:02:39.495Z",
+    "title": "-",
+    "event": 11,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.kadaster.com/-/strengthening-land-administration-in-nepal-amidst-climate-change?redirect=%2Fabout-us%2Fnews",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 36,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.535Z",
+    "updated_at": "2026-06-16T18:02:39.535Z",
+    "title": "Presentación de los trabajos realizados en 2023 por la Presidencia CPCI",
+    "event": 12,
+    "language": "[\"Español\"]",
+    "url_document": "http://www.catastrolatino.org/documentos/2023/XIV%20congreso%20Chile/CPCIActaAsambleaChile2023%20def[21726].pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 37,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.597Z",
+    "updated_at": "2026-06-16T18:02:39.597Z",
+    "title": "Implementing the Framework for Effective Land Administration (FELA): New Workplan and Developments",
+    "event": 13,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.cepal.org/sites/default/files/presentations/framework-effective-land-administration-fela-chile-oct2023.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 38,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.680Z",
+    "updated_at": "2026-06-16T18:02:39.680Z",
+    "title": "Framework for efective land administration (WG7.1) Work plan 2023-2026",
+    "event": 14,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.fig.net/resources/proceedings/fig_proceedings/7_2023/papers/se01/SE01_velasco_velasco_12338_abs.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 39,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.729Z",
+    "updated_at": "2026-06-16T18:02:39.729Z",
+    "title": "Implementing the Framework for Effective Land Administration (FELA): New Workplan and Developments",
+    "event": 15,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://fig.net/resources/proceedings/fig_proceedings/fig2023/ppt/ts01i/TS01I_soon_khoo_12061_ppt.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 40,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.744Z",
+    "updated_at": "2026-06-16T18:02:39.744Z",
+    "title": "The UN-GGIM Integrated Geospatial Information Framework and the status of the High-Level Group of the IGIF",
+    "event": 15,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://fig.net/resources/proceedings/fig_proceedings/fig2023/ppt/ts01i/TS01I_lilje_11937_ppt.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 41,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.783Z",
+    "updated_at": "2026-06-16T18:02:39.783Z",
+    "title": "Improved Land Management, a Key Factor for a Stable and Protective Social Economic Development",
+    "event": 15,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://fig.net/resources/proceedings/fig_proceedings/fig2023/papers/ts01i/TS01I_lestang_12041.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 42,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.852Z",
+    "updated_at": "2026-06-16T18:02:39.852Z",
+    "title": "Land Registration for Conquering New SDG Frontiers",
+    "event": 15,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://fig.net/resources/proceedings/fig_proceedings/fig2023/ppt/ts01i/TS01I_griffith-charles_12099_ppt.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 43,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.920Z",
+    "updated_at": "2026-06-16T18:02:39.920Z",
+    "title": "FELA-based Geospatial Knowledge Infrastructure",
+    "event": 15,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://fig.net/resources/proceedings/fig_proceedings/fig2023/ppt/ts01i/TS01I_tourtelotte_pickett_et_al_12127_ppt.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 44,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:39.971Z",
+    "updated_at": "2026-06-16T18:02:39.971Z",
+    "title": "Fit-For-Purpose Land Administration and the Framework for Effective Land Administration in Chad",
+    "event": 15,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://fig.net/resources/proceedings/fig_proceedings/fig2023/ppt/ts01i/TS01I_unger_bennett_et_al_12242_ppt.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 45,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.009Z",
+    "updated_at": "2026-06-16T18:02:40.009Z",
+    "title": "GIS in Land Administration Can Help You Implement the FELA and Support the SDG's",
+    "event": 16,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.fig.net/resources/proceedings/fig_proceedings/fig2022/papers/ts02a/TS02A_tourtelotte_11559.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 46,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.043Z",
+    "updated_at": "2026-06-16T18:02:40.043Z",
+    "title": "Digital Transformation of Land Administration: Stages, Status, and Solutions",
+    "event": 16,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.fig.net/resources/proceedings/fig_proceedings/fig2022/papers/ts04b/TS04B_bennett_unger_et_al_11482.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 47,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.103Z",
+    "updated_at": "2026-06-16T18:02:40.103Z",
+    "title": "Application of geospatial information related to land administration and management ",
+    "event": 17,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/GGIM-committee/12th-Session/documents/E-C.20_2022_13_Add_1_Land_Administration_and_Management.pdf",
+    "observations": "FELA translation into French and Dutch"
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 48,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.179Z",
+    "updated_at": "2026-06-16T18:02:40.179Z",
+    "title": "Modern Land Administration, Innovation and Investment for Sustainable Development",
+    "event": 18,
+    "language": "[\"Inglés\"]",
+    "url_document": null,
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 49,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.202Z",
+    "updated_at": "2026-06-16T18:02:40.202Z",
+    "title": "Framework for Effective Land Administration (FELA)",
+    "event": 19,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/2022/4th-EG-LAM/documents/1.3_Kees_de_Zeeuw.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 50,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.233Z",
+    "updated_at": "2026-06-16T18:02:40.233Z",
+    "title": "Effective Land Administration - Digitally-Enabled Urban Planning in Singapore",
+    "event": 19,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/2022/4th-EG-LAM/documents/1.2_Ching_Tuan_Yee.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 51,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.267Z",
+    "updated_at": "2026-06-16T18:02:40.267Z",
+    "title": "Enhancing Land Administration in Fiji through the IGIF and It's Country Action Plan",
+    "event": 19,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/2022/4th-EG-LAM/documents/1.4_Meizyanne_Hicks.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 52,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.289Z",
+    "updated_at": "2026-06-16T18:02:40.289Z",
+    "title": "Progress Report on the Revision of the Land Administration Domain Model (LADM)",
+    "event": 19,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/2022/4th-EG-LAM/documents/2.2_Chris_Body.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 53,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.319Z",
+    "updated_at": "2026-06-16T18:02:40.319Z",
+    "title": "Road Map to Implement the Framework for Effective Land Administration System in Sri Lanka",
+    "event": 19,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/2022/4th-EG-LAM/documents/6.2_MTM_Rafeek.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 54,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.337Z",
+    "updated_at": "2026-06-16T18:02:40.337Z",
+    "title": "Leveraging FELA, Sharing Experiences from the Netherlands and Abroad",
+    "event": 19,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/2022/4th-EG-LAM/documents/6.3_Paula_Dijkstra.pdf",
+    "observations": "Netherlands' implementation of FELA through Kadaster"
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 55,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.360Z",
+    "updated_at": "2026-06-16T18:02:40.360Z",
+    "title": "Implementing the Framework for Effective Land Administration (FELA)",
+    "event": 19,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/2022/4th-EG-LAM/documents/6.1_Eva_Marie_Unger.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 56,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.384Z",
+    "updated_at": "2026-06-16T18:02:40.384Z",
+    "title": "Framework for Effective Land Administration: -Implementation of the FELA, -FELA: Spanish, Arabic, Chinese, -Mexico's experience in the implementation of FELA",
+    "event": 20,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://www.youtube.com/watch?v=tp2RcZr1EgM",
+    "observations": "FELA translation into Spanish, Arabic, Chineese"
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 57,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.398Z",
+    "updated_at": "2026-06-16T18:02:40.398Z",
+    "title": "Application of geospatial information related to land administration and management ",
+    "event": 21,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/GGIM-committee/10th-Session/documents/E_C.20_2020_29-LAM-S.pdf",
+    "observations": "The members collaborated remotely to finalize FELA"
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 58,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.416Z",
+    "updated_at": "2026-06-16T18:02:40.416Z",
+    "title": "-",
+    "event": 22,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/GGIM-committee/10th-Session/documents/E-C.20-2020-29-Add_2-Framework-for-Effective-Land-Administration.pdf",
+    "observations": null
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 59,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.430Z",
+    "updated_at": "2026-06-16T18:02:40.430Z",
+    "title": "Report from UN-GGIM Expert Group on Land Administration and Management (within Session 6: Working Group 2 on Cadastre and Land Management)",
+    "event": 23,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://un-ggim-ap.org/sites/default/files/media/meetings/Plenary08/WG2_5A%20Rohan%20Bennett_Framework%20for%20Effective%20Land%20Administration%20%28FELA%29.pdf",
+    "observations": "First introduction of FELA"
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 60,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.444Z",
+    "updated_at": "2026-06-16T18:02:40.444Z",
+    "title": "Application of geospatial information related to land administration and management ",
+    "event": 24,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/GGIM-committee/9th-Session/documents/E_C.20_2020_10_Add_1_LAM_background.pdf?",
+    "observations": "First formal draft of the FELA"
+  }
+},
+{
+  "model": "FELA.presentation",
+  "pk": 61,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:40.460Z",
+    "updated_at": "2026-06-16T18:02:40.460Z",
+    "title": "Application of geospatial information related to land administration and management ",
+    "event": 25,
+    "language": "[\"Inglés\"]",
+    "url_document": "https://ggim.un.org/meetings/GGIM-committee/8th-Session/documents/E_C.20_2018_12_land_administration_E.pdf",
+    "observations": "The group proposed developing a global framework on land administration"
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 1,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.411Z",
+    "updated_at": "2026-06-16T18:02:32.411Z",
+    "name": "Amalia Velasco",
+    "country": 14,
+    "agency": 1
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 2,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.420Z",
+    "updated_at": "2026-06-16T18:02:32.420Z",
+    "name": "Mario Piumetto",
+    "country": 15,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 3,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.429Z",
+    "updated_at": "2026-06-16T18:02:32.429Z",
+    "name": "Markus Koper",
+    "country": 16,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 4,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.440Z",
+    "updated_at": "2026-06-16T18:02:32.440Z",
+    "name": "Kean Huat Soon",
+    "country": 11,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 5,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.448Z",
+    "updated_at": "2026-06-16T18:02:32.448Z",
+    "name": "Victor Khoo",
+    "country": 11,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 6,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.456Z",
+    "updated_at": "2026-06-16T18:02:32.456Z",
+    "name": "Israel Taiwo",
+    "country": 17,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 7,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.469Z",
+    "updated_at": "2026-06-16T18:02:32.469Z",
+    "name": "Magdalena Andersson",
+    "country": 18,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 8,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.478Z",
+    "updated_at": "2026-06-16T18:02:32.478Z",
+    "name": "Joep Crompvoets",
+    "country": 3,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 9,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.485Z",
+    "updated_at": "2026-06-16T18:02:32.485Z",
+    "name": "Rohan Bennett",
+    "country": 12,
+    "agency": 1
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 10,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.493Z",
+    "updated_at": "2026-06-16T18:02:32.493Z",
+    "name": "Eva-Maria Unger",
+    "country": 10,
+    "agency": 10
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 11,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.500Z",
+    "updated_at": "2026-06-16T18:02:32.500Z",
+    "name": "Kirsikka Riekkinen",
+    "country": 19,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 12,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.505Z",
+    "updated_at": "2026-06-16T18:02:32.505Z",
+    "name": "Oluwafemi Adekola",
+    "country": 19,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 13,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.515Z",
+    "updated_at": "2026-06-16T18:02:32.515Z",
+    "name": "Opeyemi Michael Ajayi",
+    "country": 19,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 14,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.526Z",
+    "updated_at": "2026-06-16T18:02:32.526Z",
+    "name": "Mamadou Mballo",
+    "country": 20,
+    "agency": 18
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 15,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.539Z",
+    "updated_at": "2026-06-16T18:02:32.539Z",
+    "name": "Hellen Ndungu",
+    "country": 21,
+    "agency": 18
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 16,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.554Z",
+    "updated_at": "2026-06-16T18:02:32.554Z",
+    "name": "John Gitau",
+    "country": 21,
+    "agency": 18
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 17,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.566Z",
+    "updated_at": "2026-06-16T18:02:32.566Z",
+    "name": "Leandre Murrell-Forde",
+    "country": 22,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 18,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.589Z",
+    "updated_at": "2026-06-16T18:02:32.589Z",
+    "name": "Claudio Martínez Topete",
+    "country": 5,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 19,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.626Z",
+    "updated_at": "2026-06-16T18:02:32.626Z",
+    "name": "Raffaella Anilio Olguín",
+    "country": 7,
+    "agency": 22
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 20,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.664Z",
+    "updated_at": "2026-06-16T18:02:32.665Z",
+    "name": "Ridomil Alejandro Rojas Ferreyra",
+    "country": 23,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 21,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.678Z",
+    "updated_at": "2026-06-16T18:02:32.678Z",
+    "name": "Markku Markkula",
+    "country": 19,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 22,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.700Z",
+    "updated_at": "2026-06-16T18:02:32.700Z",
+    "name": "Ganesh Prasad Bhatta",
+    "country": 6,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 23,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.728Z",
+    "updated_at": "2026-06-16T18:02:32.728Z",
+    "name": "Raja Ram Chhatkuli",
+    "country": 6,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 24,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.752Z",
+    "updated_at": "2026-06-16T18:02:32.752Z",
+    "name": "Janak Raj Joshi",
+    "country": 6,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 25,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.766Z",
+    "updated_at": "2026-06-16T18:02:32.766Z",
+    "name": "Mikael Lilje",
+    "country": 18,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 26,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.782Z",
+    "updated_at": "2026-06-16T18:02:32.782Z",
+    "name": "Jean-Philippe Lestang",
+    "country": 13,
+    "agency": 4
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 27,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.793Z",
+    "updated_at": "2026-06-16T18:02:32.793Z",
+    "name": "Charisse Griffith-Charles",
+    "country": 24,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 28,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.820Z",
+    "updated_at": "2026-06-16T18:02:32.820Z",
+    "name": "Katie Pickett",
+    "country": 8,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 29,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.850Z",
+    "updated_at": "2026-06-16T18:02:32.850Z",
+    "name": "Kees de Zeeuw",
+    "country": 10,
+    "agency": 21
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 30,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.863Z",
+    "updated_at": "2026-06-16T18:02:32.863Z",
+    "name": "Brandon Tourtelotte",
+    "country": 8,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 31,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.889Z",
+    "updated_at": "2026-06-16T18:02:32.889Z",
+    "name": "Mahamat Abdoulaye Malloum",
+    "country": 25,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 32,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.909Z",
+    "updated_at": "2026-06-16T18:02:32.909Z",
+    "name": "Claudia Stöcker",
+    "country": 16,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 33,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.926Z",
+    "updated_at": "2026-06-16T18:02:32.926Z",
+    "name": "Christelle van den Berg",
+    "country": 10,
+    "agency": 10
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 34,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.943Z",
+    "updated_at": "2026-06-16T18:02:32.943Z",
+    "name": "Kaspar Kundert",
+    "country": 26,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 35,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.959Z",
+    "updated_at": "2026-06-16T18:02:32.959Z",
+    "name": "Dina Naguib",
+    "country": 27,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 36,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.971Z",
+    "updated_at": "2026-06-16T18:02:32.971Z",
+    "name": "Jobo Samba",
+    "country": 37,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 37,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.984Z",
+    "updated_at": "2026-06-16T18:02:32.984Z",
+    "name": "Divyani Kohli",
+    "country": 10,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 38,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:32.993Z",
+    "updated_at": "2026-06-16T18:02:32.993Z",
+    "name": "Mila Koeva",
+    "country": 10,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 39,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.012Z",
+    "updated_at": "2026-06-16T18:02:33.012Z",
+    "name": "Vincent Verheij",
+    "country": 10,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 40,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.020Z",
+    "updated_at": "2026-06-16T18:02:33.020Z",
+    "name": "Haico Van der Vegt",
+    "country": 10,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 41,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.037Z",
+    "updated_at": "2026-06-16T18:02:33.037Z",
+    "name": "Suren Tovmasyan",
+    "country": 28,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 42,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.061Z",
+    "updated_at": "2026-06-16T18:02:33.061Z",
+    "name": "Indra Hutabarat",
+    "country": 29,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 43,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.075Z",
+    "updated_at": "2026-06-16T18:02:33.075Z",
+    "name": "Aram Gugarats",
+    "country": 28,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 44,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.094Z",
+    "updated_at": "2026-06-16T18:02:33.094Z",
+    "name": "Aulia Latif",
+    "country": 29,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 45,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.118Z",
+    "updated_at": "2026-06-16T18:02:33.118Z",
+    "name": "Chalemyan Trdat",
+    "country": 28,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 46,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.143Z",
+    "updated_at": "2026-06-16T18:02:33.143Z",
+    "name": "Committee of Experts on Global Geospatial Information Management",
+    "country": 40,
+    "agency": 16
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 47,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.162Z",
+    "updated_at": "2026-06-16T18:02:33.162Z",
+    "name": "Brent Jones",
+    "country": 8,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 48,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.177Z",
+    "updated_at": "2026-06-16T18:02:33.177Z",
+    "name": "Ching Tuan Yee",
+    "country": 11,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 49,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.189Z",
+    "updated_at": "2026-06-16T18:02:33.189Z",
+    "name": "Meizyanne Hicks",
+    "country": 30,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 50,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.201Z",
+    "updated_at": "2026-06-16T18:02:33.201Z",
+    "name": "Chris Body",
+    "country": 12,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 51,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.208Z",
+    "updated_at": "2026-06-16T18:02:33.208Z",
+    "name": "Christiaan Lemmen",
+    "country": 10,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 52,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.213Z",
+    "updated_at": "2026-06-16T18:02:33.213Z",
+    "name": "Abdullah Kara",
+    "country": 40,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 53,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.219Z",
+    "updated_at": "2026-06-16T18:02:33.219Z",
+    "name": "Peter van Oosterom",
+    "country": 10,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 54,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.226Z",
+    "updated_at": "2026-06-16T18:02:33.226Z",
+    "name": "Mohamed Rafeek",
+    "country": 31,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 55,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.238Z",
+    "updated_at": "2026-06-16T18:02:33.238Z",
+    "name": "Paula Dijkstra",
+    "country": 10,
+    "agency": 21
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 56,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.246Z",
+    "updated_at": "2026-06-16T18:02:33.246Z",
+    "name": "Ingrid van de Berghe",
+    "country": 3,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 57,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.275Z",
+    "updated_at": "2026-06-16T18:02:33.275Z",
+    "name": "Mario Cruz",
+    "country": 5,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 58,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.295Z",
+    "updated_at": "2026-06-16T18:02:33.295Z",
+    "name": "Cristian Araneda Hernandez",
+    "country": 7,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 59,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.306Z",
+    "updated_at": "2026-06-16T18:02:33.306Z",
+    "name": "Ali Alawaji",
+    "country": 32,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 60,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.326Z",
+    "updated_at": "2026-06-16T18:02:33.326Z",
+    "name": "Liao Rong",
+    "country": 33,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 61,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.349Z",
+    "updated_at": "2026-06-16T18:02:33.349Z",
+    "name": "Liu Yong",
+    "country": 33,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 62,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.368Z",
+    "updated_at": "2026-06-16T18:02:33.368Z",
+    "name": "Zhong Taiyang",
+    "country": 33,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 63,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.399Z",
+    "updated_at": "2026-06-16T18:02:33.399Z",
+    "name": "Trevor Benn",
+    "country": 40,
+    "agency": 16
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 64,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.431Z",
+    "updated_at": "2026-06-16T18:02:33.431Z",
+    "name": "Teo Chee Hai",
+    "country": 40,
+    "agency": 16
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 65,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.459Z",
+    "updated_at": "2026-06-16T18:02:33.459Z",
+    "name": "Expert Group",
+    "country": 40,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 66,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.468Z",
+    "updated_at": "2026-06-16T18:02:33.468Z",
+    "name": "Anka Lisec",
+    "country": 35,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 67,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.481Z",
+    "updated_at": "2026-06-16T18:02:33.481Z",
+    "name": "Frédéric Cantat",
+    "country": 13,
+    "agency": 4
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 68,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.490Z",
+    "updated_at": "2026-06-16T18:02:33.490Z",
+    "name": "Regina Orvananos",
+    "country": 5,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 69,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.499Z",
+    "updated_at": "2026-06-16T18:02:33.499Z",
+    "name": "Elisabeth Leblanc",
+    "country": 13,
+    "agency": 4
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 70,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.508Z",
+    "updated_at": "2026-06-16T18:02:33.508Z",
+    "name": "Vents Priedoliņš",
+    "country": 36,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 71,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.522Z",
+    "updated_at": "2026-06-16T18:02:33.522Z",
+    "name": "Aurélia Decherf",
+    "country": 13,
+    "agency": 4
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 72,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.540Z",
+    "updated_at": "2026-06-16T18:02:33.540Z",
+    "name": "Kholoud Saad Salama",
+    "country": 27,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 73,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.559Z",
+    "updated_at": "2026-06-16T18:02:33.559Z",
+    "name": "Bénédicte Bucher",
+    "country": 13,
+    "agency": 4
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 74,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.586Z",
+    "updated_at": "2026-06-16T18:02:33.586Z",
+    "name": "Romain Vialle",
+    "country": 13,
+    "agency": 4
+  }
+},
+{
+  "model": "FELA.speaker",
+  "pk": 75,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:33.599Z",
+    "updated_at": "2026-06-16T18:02:33.599Z",
+    "name": "Nick Land",
+    "country": 34,
+    "agency": null
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 1,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.360Z",
+    "updated_at": "2026-06-16T18:02:43.360Z",
+    "event": 1,
+    "agency": 1
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 2,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.381Z",
+    "updated_at": "2026-06-16T18:02:43.381Z",
+    "event": 2,
+    "agency": 2
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 3,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.388Z",
+    "updated_at": "2026-06-16T18:02:43.388Z",
+    "event": 3,
+    "agency": 3
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 4,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.402Z",
+    "updated_at": "2026-06-16T18:02:43.402Z",
+    "event": 3,
+    "agency": 4
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 5,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.410Z",
+    "updated_at": "2026-06-16T18:02:43.410Z",
+    "event": 3,
+    "agency": 5
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 6,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.418Z",
+    "updated_at": "2026-06-16T18:02:43.418Z",
+    "event": 3,
+    "agency": 6
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 7,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.428Z",
+    "updated_at": "2026-06-16T18:02:43.428Z",
+    "event": 4,
+    "agency": 7
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 8,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.440Z",
+    "updated_at": "2026-06-16T18:02:43.440Z",
+    "event": 4,
+    "agency": 8
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 9,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.448Z",
+    "updated_at": "2026-06-16T18:02:43.448Z",
+    "event": 5,
+    "agency": 9
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 10,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.454Z",
+    "updated_at": "2026-06-16T18:02:43.454Z",
+    "event": 5,
+    "agency": 10
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 11,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.462Z",
+    "updated_at": "2026-06-16T18:02:43.462Z",
+    "event": 5,
+    "agency": 11
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 12,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.471Z",
+    "updated_at": "2026-06-16T18:02:43.471Z",
+    "event": 5,
+    "agency": 12
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 13,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.480Z",
+    "updated_at": "2026-06-16T18:02:43.480Z",
+    "event": 6,
+    "agency": 13
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 14,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.486Z",
+    "updated_at": "2026-06-16T18:02:43.486Z",
+    "event": 7,
+    "agency": 1
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 15,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.497Z",
+    "updated_at": "2026-06-16T18:02:43.498Z",
+    "event": 8,
+    "agency": 14
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 16,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.505Z",
+    "updated_at": "2026-06-16T18:02:43.505Z",
+    "event": 8,
+    "agency": 15
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 17,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.518Z",
+    "updated_at": "2026-06-16T18:02:43.518Z",
+    "event": 9,
+    "agency": 1
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 18,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.526Z",
+    "updated_at": "2026-06-16T18:02:43.526Z",
+    "event": 10,
+    "agency": 16
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 19,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.536Z",
+    "updated_at": "2026-06-16T18:02:43.536Z",
+    "event": 10,
+    "agency": 17
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 20,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.545Z",
+    "updated_at": "2026-06-16T18:02:43.545Z",
+    "event": 11,
+    "agency": 18
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 21,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.564Z",
+    "updated_at": "2026-06-16T18:02:43.564Z",
+    "event": 11,
+    "agency": 19
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 22,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.572Z",
+    "updated_at": "2026-06-16T18:02:43.572Z",
+    "event": 11,
+    "agency": 20
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 23,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.580Z",
+    "updated_at": "2026-06-16T18:02:43.580Z",
+    "event": 11,
+    "agency": 21
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 24,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.589Z",
+    "updated_at": "2026-06-16T18:02:43.589Z",
+    "event": 12,
+    "agency": 17
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 25,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.606Z",
+    "updated_at": "2026-06-16T18:02:43.606Z",
+    "event": 13,
+    "agency": 22
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 26,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.621Z",
+    "updated_at": "2026-06-16T18:02:43.621Z",
+    "event": 14,
+    "agency": 1
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 27,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.638Z",
+    "updated_at": "2026-06-16T18:02:43.638Z",
+    "event": 15,
+    "agency": 1
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 28,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.646Z",
+    "updated_at": "2026-06-16T18:02:43.646Z",
+    "event": 16,
+    "agency": 1
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 29,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.661Z",
+    "updated_at": "2026-06-16T18:02:43.661Z",
+    "event": 17,
+    "agency": 16
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 30,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.669Z",
+    "updated_at": "2026-06-16T18:02:43.669Z",
+    "event": 18,
+    "agency": 23
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 31,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.678Z",
+    "updated_at": "2026-06-16T18:02:43.678Z",
+    "event": 19,
+    "agency": 16
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 32,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.689Z",
+    "updated_at": "2026-06-16T18:02:43.689Z",
+    "event": 20,
+    "agency": 16
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 33,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.714Z",
+    "updated_at": "2026-06-16T18:02:43.714Z",
+    "event": 21,
+    "agency": 16
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 34,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.732Z",
+    "updated_at": "2026-06-16T18:02:43.732Z",
+    "event": 22,
+    "agency": 16
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 35,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.749Z",
+    "updated_at": "2026-06-16T18:02:43.749Z",
+    "event": 23,
+    "agency": 16
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 36,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.785Z",
+    "updated_at": "2026-06-16T18:02:43.785Z",
+    "event": 24,
+    "agency": 16
+  }
+},
+{
+  "model": "FELA.eventagency",
+  "pk": 37,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.795Z",
+    "updated_at": "2026-06-16T18:02:43.795Z",
+    "event": 25,
+    "agency": 16
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 1,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.828Z",
+    "updated_at": "2026-06-16T18:02:43.828Z",
+    "presentation": 1,
+    "speaker": 1
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 2,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.840Z",
+    "updated_at": "2026-06-16T18:02:43.840Z",
+    "presentation": 2,
+    "speaker": 36
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 3,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.859Z",
+    "updated_at": "2026-06-16T18:02:43.859Z",
+    "presentation": 3,
+    "speaker": 57
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 4,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.885Z",
+    "updated_at": "2026-06-16T18:02:43.885Z",
+    "presentation": 4,
+    "speaker": 6
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 5,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.907Z",
+    "updated_at": "2026-06-16T18:02:43.907Z",
+    "presentation": 5,
+    "speaker": 2
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 6,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.929Z",
+    "updated_at": "2026-06-16T18:02:43.929Z",
+    "presentation": 6,
+    "speaker": 69
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 7,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.950Z",
+    "updated_at": "2026-06-16T18:02:43.950Z",
+    "presentation": 7,
+    "speaker": 68
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 8,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.969Z",
+    "updated_at": "2026-06-16T18:02:43.969Z",
+    "presentation": 8,
+    "speaker": 10
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 9,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:43.999Z",
+    "updated_at": "2026-06-16T18:02:43.999Z",
+    "presentation": 8,
+    "speaker": 55
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 10,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.032Z",
+    "updated_at": "2026-06-16T18:02:44.032Z",
+    "presentation": 9,
+    "speaker": 19
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 11,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.049Z",
+    "updated_at": "2026-06-16T18:02:44.049Z",
+    "presentation": 10,
+    "speaker": 10
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 12,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.070Z",
+    "updated_at": "2026-06-16T18:02:44.070Z",
+    "presentation": 11,
+    "speaker": 66
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 13,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.106Z",
+    "updated_at": "2026-06-16T18:02:44.107Z",
+    "presentation": 11,
+    "speaker": 67
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 14,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.134Z",
+    "updated_at": "2026-06-16T18:02:44.134Z",
+    "presentation": 12,
+    "speaker": 33
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 15,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.152Z",
+    "updated_at": "2026-06-16T18:02:44.152Z",
+    "presentation": 13,
+    "speaker": 69
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 16,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.168Z",
+    "updated_at": "2026-06-16T18:02:44.168Z",
+    "presentation": 14,
+    "speaker": 70
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 17,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.188Z",
+    "updated_at": "2026-06-16T18:02:44.188Z",
+    "presentation": 15,
+    "speaker": 71
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 18,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.203Z",
+    "updated_at": "2026-06-16T18:02:44.203Z",
+    "presentation": 15,
+    "speaker": 26
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 19,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.240Z",
+    "updated_at": "2026-06-16T18:02:44.240Z",
+    "presentation": 16,
+    "speaker": 73
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 20,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.249Z",
+    "updated_at": "2026-06-16T18:02:44.249Z",
+    "presentation": 16,
+    "speaker": 74
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 21,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.260Z",
+    "updated_at": "2026-06-16T18:02:44.260Z",
+    "presentation": 17,
+    "speaker": 29
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 22,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.270Z",
+    "updated_at": "2026-06-16T18:02:44.270Z",
+    "presentation": 17,
+    "speaker": 75
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 23,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.282Z",
+    "updated_at": "2026-06-16T18:02:44.282Z",
+    "presentation": 18,
+    "speaker": 72
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 24,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.292Z",
+    "updated_at": "2026-06-16T18:02:44.292Z",
+    "presentation": 19,
+    "speaker": 65
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 25,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.302Z",
+    "updated_at": "2026-06-16T18:02:44.302Z",
+    "presentation": 20,
+    "speaker": 1
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 26,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.311Z",
+    "updated_at": "2026-06-16T18:02:44.311Z",
+    "presentation": 20,
+    "speaker": 2
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 27,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.320Z",
+    "updated_at": "2026-06-16T18:02:44.320Z",
+    "presentation": 21,
+    "speaker": 3
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 28,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.343Z",
+    "updated_at": "2026-06-16T18:02:44.343Z",
+    "presentation": 22,
+    "speaker": 1
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 29,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.357Z",
+    "updated_at": "2026-06-16T18:02:44.357Z",
+    "presentation": 23,
+    "speaker": 4
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 30,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.365Z",
+    "updated_at": "2026-06-16T18:02:44.365Z",
+    "presentation": 23,
+    "speaker": 5
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 31,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.371Z",
+    "updated_at": "2026-06-16T18:02:44.371Z",
+    "presentation": 24,
+    "speaker": 6
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 32,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.382Z",
+    "updated_at": "2026-06-16T18:02:44.382Z",
+    "presentation": 25,
+    "speaker": 1
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 33,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.393Z",
+    "updated_at": "2026-06-16T18:02:44.393Z",
+    "presentation": 25,
+    "speaker": 7
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 34,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.405Z",
+    "updated_at": "2026-06-16T18:02:44.405Z",
+    "presentation": 26,
+    "speaker": 10
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 35,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.415Z",
+    "updated_at": "2026-06-16T18:02:44.415Z",
+    "presentation": 26,
+    "speaker": 1
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 36,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.429Z",
+    "updated_at": "2026-06-16T18:02:44.429Z",
+    "presentation": 26,
+    "speaker": 8
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 37,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.448Z",
+    "updated_at": "2026-06-16T18:02:44.448Z",
+    "presentation": 26,
+    "speaker": 9
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 38,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.476Z",
+    "updated_at": "2026-06-16T18:02:44.476Z",
+    "presentation": 27,
+    "speaker": 11
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 39,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.489Z",
+    "updated_at": "2026-06-16T18:02:44.489Z",
+    "presentation": 27,
+    "speaker": 12
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 40,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.499Z",
+    "updated_at": "2026-06-16T18:02:44.499Z",
+    "presentation": 27,
+    "speaker": 13
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 41,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.509Z",
+    "updated_at": "2026-06-16T18:02:44.509Z",
+    "presentation": 28,
+    "speaker": 14
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 42,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.520Z",
+    "updated_at": "2026-06-16T18:02:44.520Z",
+    "presentation": 28,
+    "speaker": 15
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 43,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.532Z",
+    "updated_at": "2026-06-16T18:02:44.532Z",
+    "presentation": 28,
+    "speaker": 16
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 44,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.541Z",
+    "updated_at": "2026-06-16T18:02:44.541Z",
+    "presentation": 29,
+    "speaker": 17
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 45,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.551Z",
+    "updated_at": "2026-06-16T18:02:44.551Z",
+    "presentation": 30,
+    "speaker": 18
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 46,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.561Z",
+    "updated_at": "2026-06-16T18:02:44.561Z",
+    "presentation": 31,
+    "speaker": 1
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 47,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.572Z",
+    "updated_at": "2026-06-16T18:02:44.572Z",
+    "presentation": 32,
+    "speaker": 19
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 48,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.592Z",
+    "updated_at": "2026-06-16T18:02:44.592Z",
+    "presentation": 33,
+    "speaker": 20
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 49,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.609Z",
+    "updated_at": "2026-06-16T18:02:44.609Z",
+    "presentation": 34,
+    "speaker": 21
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 50,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.621Z",
+    "updated_at": "2026-06-16T18:02:44.621Z",
+    "presentation": 35,
+    "speaker": 24
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 51,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.633Z",
+    "updated_at": "2026-06-16T18:02:44.633Z",
+    "presentation": 35,
+    "speaker": 22
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 52,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.644Z",
+    "updated_at": "2026-06-16T18:02:44.644Z",
+    "presentation": 35,
+    "speaker": 23
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 53,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.654Z",
+    "updated_at": "2026-06-16T18:02:44.654Z",
+    "presentation": 35,
+    "speaker": 10
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 54,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.666Z",
+    "updated_at": "2026-06-16T18:02:44.666Z",
+    "presentation": 35,
+    "speaker": 16
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 55,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.676Z",
+    "updated_at": "2026-06-16T18:02:44.676Z",
+    "presentation": 36,
+    "speaker": 1
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 56,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.691Z",
+    "updated_at": "2026-06-16T18:02:44.691Z",
+    "presentation": 37,
+    "speaker": 19
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 57,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.713Z",
+    "updated_at": "2026-06-16T18:02:44.713Z",
+    "presentation": 38,
+    "speaker": 1
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 58,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.748Z",
+    "updated_at": "2026-06-16T18:02:44.748Z",
+    "presentation": 39,
+    "speaker": 4
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 59,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.774Z",
+    "updated_at": "2026-06-16T18:02:44.774Z",
+    "presentation": 39,
+    "speaker": 5
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 60,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.801Z",
+    "updated_at": "2026-06-16T18:02:44.801Z",
+    "presentation": 40,
+    "speaker": 25
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 61,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.838Z",
+    "updated_at": "2026-06-16T18:02:44.838Z",
+    "presentation": 41,
+    "speaker": 26
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 62,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.866Z",
+    "updated_at": "2026-06-16T18:02:44.866Z",
+    "presentation": 42,
+    "speaker": 27
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 63,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.894Z",
+    "updated_at": "2026-06-16T18:02:44.894Z",
+    "presentation": 43,
+    "speaker": 30
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 64,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.924Z",
+    "updated_at": "2026-06-16T18:02:44.924Z",
+    "presentation": 43,
+    "speaker": 28
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 65,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.941Z",
+    "updated_at": "2026-06-16T18:02:44.941Z",
+    "presentation": 43,
+    "speaker": 29
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 66,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.960Z",
+    "updated_at": "2026-06-16T18:02:44.961Z",
+    "presentation": 44,
+    "speaker": 10
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 67,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:44.982Z",
+    "updated_at": "2026-06-16T18:02:44.982Z",
+    "presentation": 44,
+    "speaker": 9
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 68,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.005Z",
+    "updated_at": "2026-06-16T18:02:45.006Z",
+    "presentation": 44,
+    "speaker": 31
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 69,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.047Z",
+    "updated_at": "2026-06-16T18:02:45.047Z",
+    "presentation": 44,
+    "speaker": 32
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 70,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.073Z",
+    "updated_at": "2026-06-16T18:02:45.073Z",
+    "presentation": 44,
+    "speaker": 34
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 71,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.085Z",
+    "updated_at": "2026-06-16T18:02:45.085Z",
+    "presentation": 44,
+    "speaker": 35
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 72,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.103Z",
+    "updated_at": "2026-06-16T18:02:45.103Z",
+    "presentation": 44,
+    "speaker": 3
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 73,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.120Z",
+    "updated_at": "2026-06-16T18:02:45.120Z",
+    "presentation": 44,
+    "speaker": 37
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 74,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.137Z",
+    "updated_at": "2026-06-16T18:02:45.137Z",
+    "presentation": 44,
+    "speaker": 38
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 75,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.155Z",
+    "updated_at": "2026-06-16T18:02:45.155Z",
+    "presentation": 45,
+    "speaker": 30
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 76,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.190Z",
+    "updated_at": "2026-06-16T18:02:45.190Z",
+    "presentation": 46,
+    "speaker": 9
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 77,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.214Z",
+    "updated_at": "2026-06-16T18:02:45.214Z",
+    "presentation": 46,
+    "speaker": 10
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 78,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.228Z",
+    "updated_at": "2026-06-16T18:02:45.228Z",
+    "presentation": 46,
+    "speaker": 39
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 79,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.239Z",
+    "updated_at": "2026-06-16T18:02:45.239Z",
+    "presentation": 46,
+    "speaker": 40
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 80,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.249Z",
+    "updated_at": "2026-06-16T18:02:45.249Z",
+    "presentation": 46,
+    "speaker": 41
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 81,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.263Z",
+    "updated_at": "2026-06-16T18:02:45.263Z",
+    "presentation": 46,
+    "speaker": 42
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 82,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.273Z",
+    "updated_at": "2026-06-16T18:02:45.273Z",
+    "presentation": 46,
+    "speaker": 43
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 83,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.289Z",
+    "updated_at": "2026-06-16T18:02:45.289Z",
+    "presentation": 46,
+    "speaker": 44
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 84,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.304Z",
+    "updated_at": "2026-06-16T18:02:45.304Z",
+    "presentation": 46,
+    "speaker": 45
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 85,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.320Z",
+    "updated_at": "2026-06-16T18:02:45.320Z",
+    "presentation": 47,
+    "speaker": 46
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 86,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.331Z",
+    "updated_at": "2026-06-16T18:02:45.331Z",
+    "presentation": 48,
+    "speaker": 47
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 87,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.353Z",
+    "updated_at": "2026-06-16T18:02:45.353Z",
+    "presentation": 49,
+    "speaker": 29
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 88,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.364Z",
+    "updated_at": "2026-06-16T18:02:45.364Z",
+    "presentation": 50,
+    "speaker": 48
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 89,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.382Z",
+    "updated_at": "2026-06-16T18:02:45.382Z",
+    "presentation": 51,
+    "speaker": 49
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 90,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.393Z",
+    "updated_at": "2026-06-16T18:02:45.393Z",
+    "presentation": 52,
+    "speaker": 50
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 91,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.402Z",
+    "updated_at": "2026-06-16T18:02:45.402Z",
+    "presentation": 52,
+    "speaker": 51
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 92,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.422Z",
+    "updated_at": "2026-06-16T18:02:45.422Z",
+    "presentation": 52,
+    "speaker": 52
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 93,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.436Z",
+    "updated_at": "2026-06-16T18:02:45.436Z",
+    "presentation": 52,
+    "speaker": 53
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 94,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.447Z",
+    "updated_at": "2026-06-16T18:02:45.447Z",
+    "presentation": 53,
+    "speaker": 54
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 95,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.462Z",
+    "updated_at": "2026-06-16T18:02:45.462Z",
+    "presentation": 54,
+    "speaker": 55
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 96,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.471Z",
+    "updated_at": "2026-06-16T18:02:45.472Z",
+    "presentation": 55,
+    "speaker": 10
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 97,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.482Z",
+    "updated_at": "2026-06-16T18:02:45.482Z",
+    "presentation": 56,
+    "speaker": 29
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 98,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.493Z",
+    "updated_at": "2026-06-16T18:02:45.493Z",
+    "presentation": 56,
+    "speaker": 56
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 99,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.503Z",
+    "updated_at": "2026-06-16T18:02:45.503Z",
+    "presentation": 56,
+    "speaker": 10
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 100,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.521Z",
+    "updated_at": "2026-06-16T18:02:45.521Z",
+    "presentation": 56,
+    "speaker": 9
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 101,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.540Z",
+    "updated_at": "2026-06-16T18:02:45.540Z",
+    "presentation": 56,
+    "speaker": 18
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 102,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.556Z",
+    "updated_at": "2026-06-16T18:02:45.556Z",
+    "presentation": 56,
+    "speaker": 58
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 103,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.575Z",
+    "updated_at": "2026-06-16T18:02:45.575Z",
+    "presentation": 56,
+    "speaker": 59
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 104,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.594Z",
+    "updated_at": "2026-06-16T18:02:45.594Z",
+    "presentation": 56,
+    "speaker": 60
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 105,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.607Z",
+    "updated_at": "2026-06-16T18:02:45.607Z",
+    "presentation": 56,
+    "speaker": 61
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 106,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.616Z",
+    "updated_at": "2026-06-16T18:02:45.616Z",
+    "presentation": 56,
+    "speaker": 62
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 107,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.629Z",
+    "updated_at": "2026-06-16T18:02:45.629Z",
+    "presentation": 57,
+    "speaker": 46
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 108,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.637Z",
+    "updated_at": "2026-06-16T18:02:45.637Z",
+    "presentation": 58,
+    "speaker": 46
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 109,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.646Z",
+    "updated_at": "2026-06-16T18:02:45.646Z",
+    "presentation": 59,
+    "speaker": 29
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 110,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.665Z",
+    "updated_at": "2026-06-16T18:02:45.665Z",
+    "presentation": 59,
+    "speaker": 63
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 111,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.677Z",
+    "updated_at": "2026-06-16T18:02:45.677Z",
+    "presentation": 59,
+    "speaker": 64
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 112,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.688Z",
+    "updated_at": "2026-06-16T18:02:45.689Z",
+    "presentation": 59,
+    "speaker": 9
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 113,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.709Z",
+    "updated_at": "2026-06-16T18:02:45.709Z",
+    "presentation": 59,
+    "speaker": 10
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 114,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.717Z",
+    "updated_at": "2026-06-16T18:02:45.717Z",
+    "presentation": 60,
+    "speaker": 46
+  }
+},
+{
+  "model": "FELA.presentationspeaker",
+  "pk": 115,
+  "fields": {
+    "created_by": null,
+    "created_at": "2026-06-16T18:02:45.730Z",
+    "updated_at": "2026-06-16T18:02:45.730Z",
+    "presentation": 61,
+    "speaker": 46
+  }
+}
+]

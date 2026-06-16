@@ -1,10 +1,9 @@
 services:
   postgis:
     #The build:
-    #   Copy the backup
-    #   Copy a script to execute the backup
-    #   Create the user vagrant
-    #   Execute the backup
+    #   Copy the FELA seed dump (postgis/fela_seed.dump)
+    #   Copy init-db.sh into /docker-entrypoint-initdb.d
+    #   On first start with an empty volume, init-db.sh restores the dump
     build: postgis
     restart: unless-stopped
     env_file:
