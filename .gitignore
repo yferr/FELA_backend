@@ -111,3 +111,7 @@ djangoapi/.dotnet
 djangoapi/.vscode-server
 djangoapi/.ash_history
 djangoapi/sent_emails
+
+#La \indica que es un carácter especial
+\[
+.vscode
