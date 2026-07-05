@@ -64,8 +64,8 @@ RemoteDebug has been configured in the VS project and in settings.py. To stop th
 
 # Installed apps
 
-The project cams with three app:
+The project comes with the following apps:
 
-- core: It has the myLib package, who contains the geoModelSerializer. It is a base class to manage models with geometries. Ii uses geodjango.
+- core: It has the myLib package, who contains the geoModelSerializer. It is a base class to manage models with geometries. It uses geodjango.
 - FELA: It contains a model, serializer, and modelViewSet 
 
